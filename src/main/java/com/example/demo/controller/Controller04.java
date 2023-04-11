@@ -26,6 +26,11 @@ public class Controller04 {
 		
 		// 4. forward/redirect
 	}
+	
+	// 경로 : /sub4/link2?address=seoul&email=korea@gmail.com
+	// address, email 파라미터 출력하는 메소드 작성
+	
+	
 }
 
 
