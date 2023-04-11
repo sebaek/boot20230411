@@ -50,7 +50,25 @@ public class Controller04 {
 	
 	// 경로 : /sub4/link4?age=99
 	// 로 요청 왔을 때 age request 파람 출력하는 메소드 작성
+	@RequestMapping("link4")
+	public void method04(@RequestParam("age") String myage) {
+		System.out.println("age: " + myage);
+		
+		int age = Integer.parseInt(myage);
+		
+		System.out.println("int age : " + age);
+	}
 	
+	// 경로 : /sub4/link5?score=80
+	@RequestMapping("link5")
+	public void method05(@RequestParam("score") int score) {
+		System.out.println("score:" + score);
+		
+		// 2.
+		// 3.
+		// 4.
+		
+	}
 	
 }
 
