@@ -29,6 +29,11 @@ public class Controller07 {
 		// 4. forward / redirect
 		return "/sub7/link1";
 	}
+	
+	// 경로 : /sub7/link3
+	// method3 작성
+	// /WEB-INF/views/sub7/link3.jsp 로 포워드
+	
 }
 
 
