@@ -48,7 +48,7 @@ public class Controller07 {
 	// method5 작성
 	@RequestMapping("link5")
 	public void method5(Model model) {
-		Map obj = new HashMap<>();
+		Map<String, Object> obj = new HashMap<>();
 		obj.put("address", "서울");
 		obj.put("age", "서른살");
 		obj.put("email", "son@mail.com");
