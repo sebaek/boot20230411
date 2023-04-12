@@ -17,6 +17,14 @@ public class Controller08 {
 		
 		return "/sub7/link10";
 	}
+	
+	@RequestMapping("link2")
+	public void method2(@ModelAttribute("product") Dto02 obj) {
+		obj.setCompany("apple");
+		obj.setModel("ipad");
+		obj.setPrice(300);
+		
+	}
 }
 
 
