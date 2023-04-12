@@ -70,6 +70,12 @@ public class Controller04 {
 		
 	}
 	
+	// 경로 : /sub4/link6?email=son@gmail.com
+	@RequestMapping("link6")
+	public void method6(@RequestParam String email) {
+		System.out.println(email);
+	}
+	
 }
 
 
