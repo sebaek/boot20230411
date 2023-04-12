@@ -54,7 +54,25 @@ public class Controller07 {
 		obj.put("email", "son@mail.com");
 		model.addAttribute("myMap", obj);
 	}
+	
+	@RequestMapping("link6")
+	public void method6(Model model) {
+		model.addAttribute("name", "이한나");
+		model.addAttribute("job", "매니저");
+		model.addAttribute("hobby", List.of("영화", "독서", "TV"));
+		
+		
+	}
 }
+
+
+
+
+
+
+
+
+
 
 
 
