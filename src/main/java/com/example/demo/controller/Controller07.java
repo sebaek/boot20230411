@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.*;
+
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +35,17 @@ public class Controller07 {
 	// 경로 : /sub7/link3
 	// method3 작성
 	// /WEB-INF/views/sub7/link3.jsp 로 포워드
+	@RequestMapping("link3")
+	public void method3(Model model) {
+		model.addAttribute("address", "독도");
+	}
+	
+	@RequestMapping("link4")
+	public void method4(Model model) {
+		model.addAttribute("list", List.of("java", "spring"));
+	}
+	
+	// method5 작성
 	
 }
 
