@@ -90,5 +90,20 @@ public class Controller06 {
 		System.out.println("9번 메소드 일함");
 		// default view name : /sub6/link9
 	}
+	
+	@RequestMapping("link10")
+	public String method10() {
+		System.out.println("link10  메소드 일함");
+		
+		return null; // forward default view name
+	}
+	
+	// 경로 : /sub6/link11
+	// method11 작성
+	// /WEB-INF/views/sub6/link11.jsp 로 포워드
 
 }
+
+
+
+
