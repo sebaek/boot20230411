@@ -6,6 +6,8 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
+
 import jakarta.servlet.http.*;
 
 @Controller
@@ -69,6 +71,16 @@ public class Controller07 {
 		model.addAttribute("age", 40);
 		model.addAttribute("country", "한국");
 		model.addAttribute("movieList", new String[] {"앤트맨", "마블스", "스파이더맨"});
+	}
+	
+	@RequestMapping("link8")
+	public void method8(Model model) {
+		Dto01 o1 = new Dto01();
+		o1.setName("박지성");
+		o1.setAge(40);
+		
+		model.addAttribute("player", o1);
+		
 	}
 }
 
