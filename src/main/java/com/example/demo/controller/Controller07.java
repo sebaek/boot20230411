@@ -63,6 +63,13 @@ public class Controller07 {
 		
 		
 	}
+	
+	@RequestMapping("link7")
+	public void method7(Model model) {
+		model.addAttribute("age", 40);
+		model.addAttribute("country", "한국");
+		model.addAttribute("movieList", new String[] {"앤트맨", "마블스", "스파이더맨"});
+	}
 }
 
 
