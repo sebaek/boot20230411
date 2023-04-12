@@ -82,6 +82,15 @@ public class Controller07 {
 		model.addAttribute("player", o1);
 		
 	}
+	
+	// method9 작성
+	// Dto02 클래스 작성
+	
+	// 경로 : /sub7/link9 로 요청오면
+	// Dto02 객체 만들어서 model에 attribute로 추가
+	// view : /sub7/link9로 포워드
+	
+	
 }
 
 
