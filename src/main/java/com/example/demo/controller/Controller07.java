@@ -89,7 +89,24 @@ public class Controller07 {
 	// 경로 : /sub7/link9 로 요청오면
 	// Dto02 객체 만들어서 model에 attribute로 추가
 	// view : /sub7/link9로 포워드
+	@RequestMapping("link9")
+	public void method9(Model model) {
+		Dto02 obj = new Dto02();
+		obj.setModel("computer");
+		obj.setPrice(30000);
+		obj.setCompany("hp");
+		
+		model.addAttribute("value", obj);
+	}
 	
+	@RequestMapping("link10")
+	public void method10(Model model) {
+		Dto04 obj = new Dto04();
+		obj.setName("송태섭");
+		obj.setAge(20);
+		
+		model.addAttribute("val", obj);
+	}
 	
 }
 
