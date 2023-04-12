@@ -45,6 +45,24 @@ public class Controller06 {
 		String view = "/WEB-INF/views/abc.jsp";
 		req.getRequestDispatcher(view).forward(req, res);
 	}
+	
+	@RequestMapping("link5")
+	public String method5() {
+		
+		System.out.println("link5 에서 일함");
+		
+		return "forward:/WEB-INF/views/abc.jsp";
+	}
+	
+	@RequestMapping("link6")
+	public String method6() {
+		System.out.println("link6  에서 일함");
+		return "abc";
+	}
+	
+	// 경로 : /sub6/link7
+	// method7 작성
+	// forward /WEB-INF/views/def.jsp
 }
 
 
