@@ -24,6 +24,11 @@ public class Controller05 {
 		System.out.println(age);
 		System.out.println(score);
 	}
+	
+	// 경로 : /sub5/link3?address=seoul&height=170.7&width=39.1
+	// method3 작성
+	
+	
 }
 
 
