@@ -5,6 +5,7 @@ import java.io.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.security.auth.message.callback.PrivateKeyCallback.*;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 
@@ -63,6 +64,18 @@ public class Controller06 {
 	// 경로 : /sub6/link7
 	// method7 작성
 	// forward /WEB-INF/views/def.jsp
+	@RequestMapping("link7")
+	public String method7() {
+		System.out.println("link 7 일함.");
+		
+		return "def";
+		
+		/*
+		request.getRequestDispatcher("/WEB-INF/views/def.jsp")
+			.forward(request, response);
+		*/
+	}
+	
 }
 
 
