@@ -9,3 +9,7 @@ SELECT * FROM Customers
 WHERE Country != 'Mexico'; -- 86개
 
 -- 문제1) 나라가 USA가 아닌 공급자들 조회
+SELECT * FROM Suppliers
+WHERE Country <> 'USA';
+SELECT SupplierName FROM Suppliers
+WHERE Country != 'USA';
