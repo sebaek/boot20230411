@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import java.util.*;
+
 import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.domain.*;
@@ -29,10 +32,13 @@ public class Controller10 {
 	
 	// /sub10/link3?model=ray&price=3.14&name=son&age=22
 	@RequestMapping("link3")
-	public void method3(
-						String model, 
+	public void method3(String model,
 						double price,
 						Dto04 obj) {
+		/*
+		modelMap.addAttribute("model", model);
+		modelMap.addAttribute("price", price);
+		*/
 		
 	}
 }

@@ -14,6 +14,12 @@
 	<h1>\${price } : ${price }</h1>
 	<h1>\${dto04.name } : ${dto04.name }</h1>
 	<h1>\${dto04.age } : ${dto04.age }</h1>
+	
+	<hr />
+	
+	<h1>\${param.model } : ${param.model }</h1>
+	<h1>\${param.price } : ${param.price }</h1>
+	<h1>\${string } : ${string }</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
