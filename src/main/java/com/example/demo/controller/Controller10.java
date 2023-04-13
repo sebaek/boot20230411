@@ -41,6 +41,19 @@ public class Controller10 {
 		*/
 		
 	}
+	
+	@RequestMapping("link4")
+	public void method4() {
+		// 1. request param 수집/가공
+		
+		// 2. business logic
+		// data를 생성(create), 읽기(read), 수정(update), 삭제(delete)
+		// crud
+		
+		// 3. add attribute
+		
+		// 4. forward
+	}
 }
 
 
