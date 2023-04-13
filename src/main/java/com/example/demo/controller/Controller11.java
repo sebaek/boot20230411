@@ -82,6 +82,40 @@ public class Controller11 {
 		System.out.println(employeeName);
 		
 	}
+	
+	@RequestMapping("link3")
+	public void method3(Model model) {
+		// * 업무
+		// 아이디가 5인 상품 이름 조회
+		String sql = """
+				SELECT ProductName
+				FROM Products
+				WHERE ProductID = 5
+				""";
+		
+		String productName = "";
+		
+		try {
+			Connection con = DriverManager.getConnection(url, name, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			try (con; stmt; rs;) {
+				if (rs.next()) {
+					productName = rs.getString("productName");
+				}
+			}
+			
+			System.out.println(productName);
+			
+			model.addAttribute("productName", productName);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 }
 
 
