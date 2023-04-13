@@ -149,6 +149,33 @@ public class Controller11 {
 		
 		// 4. forward
 	}
+	
+	@RequestMapping("link5")
+	public void method5(Model model) {
+		// 직원 이름(firstName)들을 조회해서 jsp로 출력
+		String sql = """
+				SELECT firstName
+				FROM Employees
+				""";
+		
+		List<String> list = new ArrayList<>();
+		
+		try {
+			Connection con = DriverManager.getConnection(url, name, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			try (con; stmt; rs;) {
+				while (rs.next()) {
+					list.add(rs.getString("firstName"));
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		model.addAttribute("names", list);
+	}
 }
 
 
