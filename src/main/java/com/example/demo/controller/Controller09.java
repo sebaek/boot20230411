@@ -12,6 +12,7 @@ import jakarta.servlet.http.*;
 @RequestMapping("sub9")
 public class Controller09 {
 
+	// /sub9/link1?name=son&age=20
 	@RequestMapping("link1")
 	public String method01(HttpServletRequest req, Model model) {
 		// 1. request parameter 수집/가공
@@ -30,6 +31,12 @@ public class Controller09 {
 		// 4. forward / redirect
 		// /WEB-INF/views/sub9/link1.jsp  로 포워드
 		return "/sub9/link1"; 
+	}
+	
+	@RequestMapping("link2")
+	public String method2(@ModelAttribute("value") Dto04 obj) {
+		
+		return "/sub9/link1";
 	}
 }
 
