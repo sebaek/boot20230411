@@ -7,6 +7,8 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.el.*;
+
 @Controller
 @RequestMapping("sub11")
 public class Controller11 {
@@ -20,7 +22,11 @@ public class Controller11 {
 
 	@RequestMapping("link1")
 	public void method1(Model model) {
+		// 1. request param
+		
 		// 2. business logic
+		
+		// 아이디 1 고객이름 조회
 		// SELECT CustomerName FROM Customers WHERE CustomerID = 1;
 		
 		String sql = "SELECT CustomerName FROM Customers WHERE CustomerID = 1";
@@ -46,6 +52,34 @@ public class Controller11 {
 		}
 		
 		// 4. forward 
+		
+	}
+	
+	@RequestMapping("link2")
+	public void method2() {
+		String employeeName = "";
+		// * business logic
+		// 아이디 3인 직원의 last name 조회
+		
+		String sql = "SELECT lastName FROM Employees WHERE EmployeeId = 3";
+		try (
+			// 1. 연결하기
+			Connection con = DriverManager.getConnection(url, name, password);
+			// 2. statement 생성
+			Statement stmt = con.createStatement();
+			// 3. 쿼리 실행 후 resultSet 얻기
+			ResultSet rs = stmt.executeQuery(sql);
+		) {
+			// 4. resultSet에 결과 있는 지 확인하고
+			if (rs.next()) {
+				// 5. 결과 꺼내서 담기
+				employeeName = rs.getString("lastName");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(employeeName);
 		
 	}
 }
