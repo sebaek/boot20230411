@@ -10,3 +10,5 @@ SELECT Country, CustomerName FROM Customers;
 
 -- 문제 1) Employees 테이블에서 
 -- BirthDate, FirstName, LastName 을 조회
+SELECT BirthDate, FirstName, LastName FROM Employees;
+SELECT birthDate, firstName, lastname FROM Employees;
