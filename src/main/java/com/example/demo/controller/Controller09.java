@@ -33,6 +33,7 @@ public class Controller09 {
 		return "/sub9/link1"; 
 	}
 	
+	// /sub9/link2?name=park&age=40
 	@RequestMapping("link2")
 	public String method2(@ModelAttribute("value") Dto04 obj) {
 		
