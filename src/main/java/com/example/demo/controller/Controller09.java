@@ -68,4 +68,19 @@ public class Controller09 {
 		// 4. forward/ redirect
 		// /WEB-INF/views/sub9/link4.jsp로 포워드
 	}
+	
+	// 경로 /sub9/link5?model=genesis&company=tesla&price=300         -- 쿼리스트링 완성
+	@RequestMapping("link5")
+	public void method5(Dto02 dto) {
+		// 1. 쿼리스트링작성
+		// 2. jsp 작성 
+		// 해서 dto의 property들 출력
+		
+	}
 }
+
+
+
+
+
+
