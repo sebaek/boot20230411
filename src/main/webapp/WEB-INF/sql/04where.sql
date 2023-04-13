@@ -13,3 +13,25 @@ SELECT * FROM Suppliers
 WHERE Country <> 'USA';
 SELECT SupplierName FROM Suppliers
 WHERE Country != 'USA';
+
+
+-- > : 크다
+SELECT * FROM Products
+WHERE Price > 10.00;
+SELECT * FROM Products
+WHERE Price > 90.00;
+SELECT * FROM Products
+WHERE ProductName > 'U';
+SELECT * FROM Products
+WHERE ProductName > 'u';
+SELECT * FROM Employees;
+SELECT * FROM Employees
+WHERE BirthDate > '1960-01-01';
+
+-- < : 작다
+SELECT * FROM Employees
+WHERE BirthDate < '1960-01-01';
+SELECT * FROM Products
+WHERE Price < 5.00;
+SELECT * FROM Customers
+WHERE CustomerName < 'c';
