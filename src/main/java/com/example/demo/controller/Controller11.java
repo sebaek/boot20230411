@@ -1,13 +1,12 @@
 package com.example.demo.controller;
 
 import java.sql.*;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
-
-import jakarta.el.*;
 
 @Controller
 @RequestMapping("sub11")
@@ -115,6 +114,40 @@ public class Controller11 {
 		}
 		
 		
+	}
+	
+	@RequestMapping("link4")
+	public void method4(Model model) {
+		// #업무
+		// 고객 이름들 조회
+		
+		String sql = """
+				SELECT CustomerName
+				FROM Customers
+				""";
+		
+		List<String> list = new ArrayList<>();
+		
+		try {
+			Connection con = DriverManager.getConnection(url, name, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			try (con; stmt; rs;) {
+				// list에 고객 이름들을 담고
+				while (rs.next()) {
+					list.add(rs.getString("CustomerName"));
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		// 3. add attribute
+		model.addAttribute("customerNames", list);
+		
+		// 4. forward
 	}
 }
 
