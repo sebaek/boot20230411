@@ -18,6 +18,14 @@ SELECT * FROM Products
 WHERE CategoryID IN (1, 3, 5, 7);
 
 -- Berlin, London, Madrid, Paris 에 있는 고객들 조회
+SELECT * FROM Customers WHERE City IN ('Berlin', 'London', 'madrid', 'Paris');
+
+-- Berlin, London, Madrid, Paris 에 있지 않는 고객들 조회
+SELECT * FROM Customers WHERE NOT City IN ('Berlin', 'London', 'madrid', 'Paris');
+SELECT * FROM Customers WHERE City NOT IN ('Berlin', 'London', 'madrid', 'Paris');
+
+-- 1, 3, 5, 7 카테고리가 아닌 상품들 조회
+SELECT * FROM Products WHERE CategoryID NOT IN (1, 3, 5, 7);
 
 
 
