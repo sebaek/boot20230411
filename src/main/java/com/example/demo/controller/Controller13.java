@@ -95,7 +95,7 @@ public class Controller13 {
 
 	// 경로 : /sub13/link3?id=5
 	@RequestMapping("link3")
-	public String method3(@RequestParam int id, Model model) throws Exception {
+	public String method3(@RequestParam String id, Model model) throws Exception {
 		List<Customer> list = new ArrayList<>();
 		String sql = """
 				SELECT CustomerId, CustomerName, Address
