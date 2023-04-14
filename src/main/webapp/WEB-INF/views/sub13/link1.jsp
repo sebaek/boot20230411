@@ -20,6 +20,7 @@
 			<tr>
 				<th>ID</th>
 				<th>NAME</th>
+				<th>ContactNAME</th>
 				<th>ADDRESS</th>
 			</tr>
 		</thead>
@@ -28,6 +29,7 @@
 				<tr>
 					<td>${customer.id }</td>
 					<td>${customer.name }</td>
+					<td>${customer.contactName }</td>
 					<td>${customer.address }</td>
 				</tr>
 			</c:forEach>

@@ -41,6 +41,7 @@ public class Controller14 {
 		Connection con = DriverManager.getConnection(url, name, password);
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, "%" + keyword + "%");
+		pstmt.setString(2, "%" + keyword + "%");
 		ResultSet rs = pstmt.executeQuery();
 		
 		try (con; pstmt; rs;) {
@@ -49,6 +50,8 @@ public class Controller14 {
 				c.setId(rs.getInt("customerId"));
 				c.setAddress(rs.getString("address"));
 				c.setName(rs.getString("customerName"));
+				c.setContactName(rs.getString("contactName"));
+				
 				list.add(c);
 			}
 		}
