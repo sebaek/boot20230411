@@ -22,6 +22,9 @@ public class Controller13 {
 	private String password;
 	
 	@RequestMapping("link1")
+	// 고객 주소 추가
+	// jsp에서 테이블 형식으로 보여주기
+	
 	public void method1(Model model) throws Exception {
 		String sql = """
 				SELECT CustomerID, CustomerName
