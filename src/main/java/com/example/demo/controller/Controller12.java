@@ -90,6 +90,10 @@ public class Controller12 {
 			e.printStackTrace();
 		}
 	}
+	
+	// SELECT ShipperName FROM Shippers;
+	// 경로 : link3
+	
 }
 
 
