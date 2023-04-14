@@ -195,14 +195,20 @@ String sql = "SELECT * FROM Customers";
 		
 		try (con; stmt; rs) {
 			while (rs.next()) {
+				/*
 				System.out.println(rs.getInt("CustomerId"));
 				System.out.println(rs.getString("CustomerName"));
+				*/
+				System.out.println(rs.getInt(1));
+				System.out.println(rs.getString(2));
 			}
 		}
 		
 	}
-	
 }
+
+
+
 
 
 
