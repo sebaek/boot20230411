@@ -23,13 +23,13 @@ public class Controller13 {
 	
 	@RequestMapping("link1")
 	// 고객 주소 추가
+	// 전체 고객 출력
 	// jsp에서 테이블 형식으로 보여주기
 	
 	public void method1(Model model) throws Exception {
 		String sql = """
-				SELECT CustomerID, CustomerName
+				SELECT CustomerID, CustomerName, Address
 				FROM Customers
-				WHERE CustomerID < 4
 				""";
 		List<Customer> obj = new ArrayList<>();
 		// 1.
@@ -42,12 +42,15 @@ public class Controller13 {
 			while (rs.next()) {
 				int id = rs.getInt("customerId");
 				String name = rs.getString("customerName");
+				String address = rs.getString("address");
 				System.out.println(id + ":" + name); // 콘솔 출력
 				
 				Customer customer = new Customer();
 				customer.setId(id);
 				customer.setName(name);
+				customer.setAddress(address);
 				obj.add(customer);
+				
 			}
 		}
 		// 3. add attribute
