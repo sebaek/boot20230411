@@ -53,7 +53,8 @@ public class Controller13 {
 	}
 	
 	@RequestMapping("link2")
-	public void method2() {
+	public void method2(Model model) throws Exception {
+		List<Employee> list = new ArrayList<>();
 		String sql = """
 				SELECT EmployeeId, 
 				       LastName,
@@ -64,6 +65,23 @@ public class Controller13 {
 		
 		// Employee 클래스 작성
 		// 프로퍼티 (id(int), lastName(string), firstName(string))
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		try (con; stmt; rs;) {
+			while (rs.next()) {
+				Employee employee = new Employee();
+				employee.setId(rs.getInt("employeeId"));
+				employee.setFirstName(rs.getString("firstName"));
+				employee.setLastName(rs.getString("lastName"));
+				
+				list.add(employee);
+			}
+			
+		}
+		
+		model.addAttribute("employeeList", list);
 		
 		// jsp 작성
 		
