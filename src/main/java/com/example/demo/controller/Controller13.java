@@ -51,7 +51,33 @@ public class Controller13 {
 		model.addAttribute("customerList", obj);
 		// 4.
 	}
+	
+	@RequestMapping("link2")
+	public void method2() {
+		String sql = """
+				SELECT EmployeeId, 
+				       LastName,
+				       FirstName
+				FROM Employees
+				""";
+		// 이 메소드 완성
+		
+		// Employee 클래스 작성
+		// 프로퍼티 (id(int), lastName(string), firstName(string))
+		
+		// jsp 작성
+		
+	}
 }
+
+
+
+
+
+
+
+
+
 
 
 
