@@ -157,4 +157,29 @@ public class Controller13 {
 
 		return "/sub13/link1";
 	}
+	
+	
+	// /sub13/link5?id=3
+	@RequestMapping("link5")
+	public String method5() {
+		// 사용자에게 직원 id 입력 받아서
+		// 쿼리 완성하고 실행 후에
+		// /sub13/link2 로 포워드해서 직원 1명 정보 출력
+		String sql = """
+				SELECT EmployeeId,
+				       lastName,
+				       firstName
+				FROM Employees
+				WHERE EmployeeId = ?
+				""";
+		
+		return "/sub13/link2";
+	}
 }
+
+
+
+
+
+
+
