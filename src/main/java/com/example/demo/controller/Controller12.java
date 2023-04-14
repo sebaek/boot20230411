@@ -71,6 +71,25 @@ public class Controller12 {
 		}
 		
 	}
+	
+	@RequestMapping("link2")
+	public void method2() {
+		String sql = """
+				SELECT LastName FROM Employees
+				""";
+		try {
+			Connection con = DriverManager.getConnection(url, name, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			try (con; stmt; rs;) {
+				while (rs.next()) {
+					System.out.println(rs.getString("lastName"));
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 
