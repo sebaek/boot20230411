@@ -112,4 +112,62 @@ public class Controller12 {
 		}
 
 	}
+	
+	@RequestMapping("link4")
+	public void method4() {
+		String sql = "SELECT * FROM Customers";
+		
+		try {
+			
+			Connection con = DriverManager.getConnection(url, name, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			try (con; stmt; rs;) {
+				rs.next();
+				System.out.println(rs.getString("customerName"));
+				System.out.println(rs.getString("contactName"));
+				System.out.println(rs.getString("country"));
+				
+				rs.next();
+				System.out.println(rs.getString("customerName"));
+				System.out.println(rs.getString("contactName"));
+				System.out.println(rs.getString("country"));
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@RequestMapping("link5")
+	public void method5() {
+String sql = "SELECT * FROM Customers";
+		
+		try {
+			
+			Connection con = DriverManager.getConnection(url, name, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			try (con; stmt; rs;) {
+				while (rs.next()) {
+					System.out.println("################");
+					System.out.println(rs.getString("customerName"));
+					System.out.println(rs.getString("contactName"));
+					System.out.println(rs.getString("country"));
+					
+				}
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
+
+
+
+
+
+
+
