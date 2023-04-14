@@ -155,14 +155,31 @@ String sql = "SELECT * FROM Customers";
 					System.out.println(rs.getString("customerName"));
 					System.out.println(rs.getString("contactName"));
 					System.out.println(rs.getString("country"));
-					
 				}
-				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping("link6")
+	public void method6() throws Exception {
+		String sql = "SELECT * FROM Products WHERE ProductId <= 3";
+		
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+
+		try (con; stmt; rs;) {
+			while (rs.next()) {
+				System.out.println(rs.getInt("ProductID"));
+				System.out.println(rs.getString("ProductName"));
+				System.out.println(rs.getDouble("Price"));
+			}
+		}
+	}
+	
+	
 }
 
 
