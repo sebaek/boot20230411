@@ -230,16 +230,31 @@ String sql = "SELECT * FROM Customers";
 	}
 	
 	@RequestMapping("link9")
-	public void method9() {
+	public void method9() throws Exception {
 		// 고객테이블 조회 쿼리 작성
 		// 나머지 코드들도 완성
 		
-		while (rs.next()) {
-			int customerId = rs.getInt(1);
-			String customerName = rs.getString(2);
-			String country = rs.getString(3);
-			System.out.println(customerId + ", " + customerName + ", " + country);
+		String sql = """
+				SELECT CustomerId,
+				       CustomerName,
+				       Country
+				FROM Customers
+				WHERE CustomerID < 4
+				""";
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		try (con; stmt; rs;) {
+			while (rs.next()) {
+				int customerId = rs.getInt(1);
+				String customerName = rs.getString(2);
+				String country = rs.getString(3);
+				System.out.println(customerId + ", " + customerName + ", " + country);
+			}
+			
 		}
+		
 	}
 }
 
