@@ -18,4 +18,24 @@ SELECT * FROM Employees
 WHERE BirthDate >= '1950-01-01' AND BirthDate <= '1959-12-31';
 
 
+-- OR
+SELECT * FROM Customers
+WHERE Country = 'Germany';
+SELECT * FROM Customers
+WHERE Country = 'France';
+SELECT * FROM Customers
+WHERE Country = 'Germany' OR Country = 'France';
+
+-- 도시 London 또는 Madrid 에 있는 고객들 조회
+SELECT *
+FROM Customers
+WHERE City = 'London' OR City = 'Madrid';
+
+SELECT *
+FROM Products
+WHERE CategoryID = 1 OR CategoryId = 2;
+
+
+
+
 
