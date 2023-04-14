@@ -205,6 +205,29 @@ String sql = "SELECT * FROM Customers";
 		}
 		
 	}
+	
+	@RequestMapping("link8")
+	public void method8() throws Exception {
+		String sql = """
+				SELECT FirstName, LastName 
+				FROM Employees
+				WHERE EmployeeID < 4
+				""";
+		
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		try (con; stmt; rs;) {
+			while (rs.next()) {
+				String lastName = rs.getString(2);
+				String firstName = rs.getString(1);
+				
+				System.out.println(lastName + ", " + firstName);
+			}
+		}
+		
+	}
 }
 
 
