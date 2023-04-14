@@ -161,10 +161,11 @@ public class Controller13 {
 	
 	// /sub13/link5?id=3
 	@RequestMapping("link5")
-	public String method5() {
+	public String method5(String id, Model model) throws Exception {
 		// 사용자에게 직원 id 입력 받아서
 		// 쿼리 완성하고 실행 후에
 		// /sub13/link2 로 포워드해서 직원 1명 정보 출력
+		var list = new ArrayList<Employee>();
 		String sql = """
 				SELECT EmployeeId,
 				       lastName,
@@ -172,6 +173,25 @@ public class Controller13 {
 				FROM Employees
 				WHERE EmployeeId = ?
 				""";
+		
+		Connection con = DriverManager.getConnection(url, name, password);
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, id);
+		ResultSet rs = pstmt.executeQuery();
+		
+		try (con; pstmt; rs;) {
+			while (rs.next()) {
+				Employee employee = new Employee();
+				employee.setId(rs.getInt("employeeId"));
+				employee.setFirstName(rs.getString("firstName"));
+				employee.setLastName(rs.getString("lastName"));
+				
+				list.add(employee);
+			}
+		}
+		
+		model.addAttribute("employeeList", list);
+		
 		
 		return "/sub13/link2";
 	}
