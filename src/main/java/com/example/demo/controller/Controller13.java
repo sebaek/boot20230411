@@ -125,4 +125,36 @@ public class Controller13 {
 
 		return "/sub13/link1";
 	}
+
+	// 경로 : /sub13/link4?id=5
+	@RequestMapping("link4")
+	public String method4(@RequestParam String id, Model model) throws Exception {
+		List<Customer> list = new ArrayList<>();
+		String sql = """
+				SELECT CustomerId, CustomerName, Address
+				FROM Customers
+				WHERE CustomerId = ? """;
+
+		Connection con = DriverManager.getConnection(url, name, password);
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, id);
+		
+		ResultSet rs = stmt.executeQuery();
+
+		try (con; stmt; rs;) {
+			while (rs.next()) {
+				Customer customer = new Customer();
+				customer.setId(rs.getInt("customerid"));
+				customer.setAddress(rs.getString("address"));
+				customer.setName(rs.getString("customerName"));
+
+				list.add(customer);
+			}
+
+		}
+
+		model.addAttribute("customerList", list);
+
+		return "/sub13/link1";
+	}
 }
