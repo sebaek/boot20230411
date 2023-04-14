@@ -178,7 +178,29 @@ String sql = "SELECT * FROM Customers";
 			}
 		}
 	}
-	
+
+	// SELECT * FROM Customers WHERE CustomerID < 4
+	// CustomerID 는 int 타입으로 가져오기
+	// CustomerName 은 String 타입으로 가져오기
+	// 경로 link7
+	@RequestMapping("link7")
+	public void method7() throws Exception {
+		String sql = """
+				SELECT * FROM Customers WHERE CustomerID < 4
+				""";
+		
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		try (con; stmt; rs) {
+			while (rs.next()) {
+				System.out.println(rs.getInt("CustomerId"));
+				System.out.println(rs.getString("CustomerName"));
+			}
+		}
+		
+	}
 	
 }
 
