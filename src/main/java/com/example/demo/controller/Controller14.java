@@ -21,13 +21,20 @@ public class Controller14 {
 	@Value("${spring.datasource.password}")
 	private String password;
 	
+	// 추가업무 : ContactName에도 키워드 조회 추가
+	// 1. 쿼리 수정
+	// 2. pstmt에 2번째 물음표에 set 하는 코드 추가
+	// 3. Customer 자바빈의 contactName 프로퍼티 추가
+	// 4. /sub13/link1 뷰에 contactName 속성 출력하는 테이블 열 추가
+	
 	// /sub14/link1?keyword=or
 	@RequestMapping("link1")
 	public String method1(String keyword, Model model) throws Exception {
 		String sql = """
-				SELECT CustomerID, CustomerName, Address
+				SELECT CustomerID, CustomerName, Address, ContactName
 				FROM Customers
 				WHERE CustomerName LIKE ?
+				   OR ContactName LIKE ?
 				""";
 		var list = new ArrayList<Customer>();
 		
