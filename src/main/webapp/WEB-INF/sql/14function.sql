@@ -17,3 +17,13 @@ ORDER BY 1;
 SELECT DISTINCT Country 
 FROM Customers
 ORDER BY Country;
+
+
+-- 전체 직원 수
+SELECT COUNT(EmployeeID) FROM Employees;
+-- 상파울로에사는 고객 수
+SELECT COUNT(CustomerID) FROM Customers
+WHERE City = 'São Paulo';
+
+-- 공급자(suppliers)가 있는 나라 수(중복제거)
+SELECT Count(DISTINCT Country) FROM Suppliers;
