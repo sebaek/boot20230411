@@ -20,7 +20,15 @@ INSERT INTO Customers
 VALUES
 (94, '송태섭', 'Tokyo', 'Japan');
 
-
-
+-- 문제1)Suppliers 테이블에 30번째 공급자 추가(모든 열)
+INSERT INTO Suppliers
+VALUES
+(30, '강백호', 'kang baek ho', 'Tokyo', 'Seoul',
+'11111', 'Japan', '01099999999');
+-- 문제2)Suppliers 테이블에 31번째 공급자 추가
+INSERT INTO Suppliers (SupplierID, SupplierName, City, Country)
+VALUES (31, '채치수', 'Seoul', 'Korea');
+-- SupplierID, SupplierName, City, Country
+SELECT * FROM Suppliers ORDER BY 1 DESC;
 
 
