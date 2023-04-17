@@ -30,7 +30,7 @@ FROM Products; -- 28.13
 -- 문제1) 고객테이블에서 
 -- CustomerId, CustomerName, ContactName, Address 조회
 -- ContactName이 NULL 이면 'Anonymous'로 
--- Address 가 NULL 이면 'Homless'로 조회
+-- Address 가 NULL 이면 'Homeless'로 조회
 
 SELECT * FROM Customers ORDER BY 1 DESC;
 
