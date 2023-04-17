@@ -52,5 +52,6 @@ FROM Customers
 GROUP BY Country
 ORDER BY COUNT(CustomerID);
 
-
+-- keyword 사용시 backtick
+SELECT Country AS `FROM`, CustomerName FROM Customers;
 
