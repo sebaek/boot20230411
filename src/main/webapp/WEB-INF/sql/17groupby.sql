@@ -39,6 +39,11 @@ GROUP BY CategoryID
 ORDER BY 2
 LIMIT 1;
 
-
-
+-- 여러 컬럼으로 그룹
+SELECT * FROM Customers;
+SELECT COUNT(CustomerID) FROM Customers;
+SELECT Country, COUNT(CustomerID) FROM Customers
+GROUP BY Country;
+SELECT Country, City, COUNT(CustomerID) FROM Customers
+GROUP BY Country, City;
 
