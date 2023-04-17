@@ -12,8 +12,17 @@ FROM Customers -- 지울 테이블 명
 WHERE CustomerID = 94; -- 지울 레코드의 조건
 
 -- 93번 고객 지우기
+DELETE
+FROM Customers
+WHERE CustomerID = 93;
 -- 78번 상품 지우기
+DELETE
+FROM Products
+WHERE ProductID = 78;
 -- 79번 상품 지우기
+DELETE
+FROM Products
+WHERE ProductID = 79;
 
 
 
