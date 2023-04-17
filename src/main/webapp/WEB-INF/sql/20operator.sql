@@ -37,3 +37,19 @@ SELECT *,
 Price * 1300 won FROM Products
 WHERE Price >= 100000 / 1300;
 
+-- 부분 문자열 : substring
+-- 첫번째파라미터 : 원본문자열
+-- 두번째파라미터 : 시작인덱스
+-- 세번째파라미터 : 길이
+SELECT SUBSTRING('hello world', 3, 3); -- 첫글자는 인덱스1
+
+SELECT CustomerName FROM Customers;
+SELECT SUBSTRING(CustomerName, 1, 3) FROM Customers;
+
+-- 고객테이블에서 고객명, 나라이름(앞3글자만) 조회
+SELECT CustomerName, 
+SUBSTRING(Country, 1, 3) Country
+FROM Customers;
+
+
+
