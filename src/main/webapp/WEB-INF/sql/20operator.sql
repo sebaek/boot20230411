@@ -29,6 +29,7 @@ SELECT ProductId,
 ProductName, 
 SupplierID, 
 CategoryID, 
+Unit,
 Price dollor,
 Price * 1300 won FROM Products
 WHERE Price >= 100000 / 1300;
