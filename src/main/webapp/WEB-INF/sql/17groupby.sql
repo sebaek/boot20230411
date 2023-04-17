@@ -23,11 +23,21 @@ ORDER BY 2 DESC
 LIMIT 0, 1;
 
 -- 카테고리별 상품 가격의 평균 조회
+SELECT CategoryID, AVG(Price) FROM Products
+GROUP BY CategoryID;
 -- 카테고리별 가장 비싼 상품의 가격 조회
+SELECT CategoryID, MAX(Price) FROM Products
+GROUP BY CategoryID;
+SELECT * FROM Products WHERE Price = 263.50;
 -- 카테고리별 가장 싼 상품의 가격 조회
+SELECT CategoryID, MIN(Price) FROM Products
+GROUP BY CategoryID;
 
 -- 상품 가격의 평균이 가장 높은 카테고리 조회
-
+SELECT CategoryId, AVG(Price) FROM Products
+GROUP BY CategoryID
+ORDER BY 2
+LIMIT 1;
 
 
 
