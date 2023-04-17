@@ -13,7 +13,8 @@ WHERE CategoryID = 2
 SELECT * FROM Products
 WHERE CategoryID = 2
   AND Price IS NULL;
-   
+SELECT ProductName, Price * 1300 FROM Products
+WHERE CategoryID = 2; -- 산술연산결과도 NULL
    
    
    
