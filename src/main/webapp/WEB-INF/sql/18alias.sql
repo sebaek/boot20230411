@@ -54,4 +54,6 @@ ORDER BY COUNT(CustomerID);
 
 -- keyword 사용시 backtick
 SELECT Country AS `FROM`, CustomerName FROM Customers;
+SELECT `Country` AS `FROM`, `CustomerName`
+FROM `Customers`;
 
