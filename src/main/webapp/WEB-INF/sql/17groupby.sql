@@ -47,3 +47,7 @@ GROUP BY Country;
 SELECT Country, City, COUNT(CustomerID) FROM Customers
 GROUP BY Country, City;
 
+-- 나라별, 도시별 공급자 수 조회
+SELECT * FROM Suppliers;
+SELECT Country, City, COUNT(SupplierID) FROM Suppliers
+GROUP BY Country, City;
