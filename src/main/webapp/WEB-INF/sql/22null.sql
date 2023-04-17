@@ -14,3 +14,12 @@ ORDER BY 1 DESC;
 SELECT * FROM Suppliers
 WHERE ContactName IS NOT NULL
 ORDER BY 1 DESC;
+
+
+-- Customers 테이블에서
+-- Address 컬럼이 NULL인 레코드 조회
+
+-- Customers 테이블에서
+-- Address 컬럼이 NULL이 아닌 레코드 조회
+
+
