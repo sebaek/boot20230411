@@ -41,6 +41,20 @@ UPDATE Suppliers
 SET ContactName = '북산',
     City = 'Seoul';
 
+UPDATE Suppliers 
+SET
+	PostalCode = CONCAT('J', PostalCode)
+WHERE Country = 'Japan';
+SELECT * FROM Suppliers WHERE Country = 'Japan';
+SELECT * FROM Suppliers;
 
+SELECT * FROM Products;
+INSERT INTO Products
+VALUES (1, 'cake', null, null, null, 300);
+INSERT INTO Products
+VALUES (2, 'pizza', null, null, null, 100);
+
+UPDATE Products
+SET Price = Price * 1300;
 
 
