@@ -24,6 +24,27 @@ DELETE
 FROM Products
 WHERE ProductID = 79;
 
+--
+DELETE
+FROM Products
+WHERE CategoryID = 1;
+--
+SELECT COUNT(*) FROM Products;
+
+DELETE
+FROM Products;
+
+SELECT *
+FROM Products;
+
+-- 문제1)고객테이블에서 USA에 사는 고객들 지우기
+DELETE
+FROM Customers
+WHERE Country = 'USA';
+-- 문제2)모든 직원 지우기
+DELETE
+FROM Employees;
+
 
 
 
