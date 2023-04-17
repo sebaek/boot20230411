@@ -19,7 +19,12 @@ GROUP BY Country
 HAVING COUNT(CustomerID) >= 5;
 
 -- 문제1)상품의 평균 가격이 30 달러 이상인 카테고리 조회
-
+SELECT CategoryID, AVG(Price) FROM Products
+GROUP BY CategoryID
+HAVING AVG(Price) >= 30.00;
 -- 문제2) 카테고리별 상품의 최고 가격이 
 -- 100달러 이상인 카테고리
+SELECT CategoryID, MAX(Price) FROM Products
+GROUP BY CategoryID
+HAVING MAX(Price) >= 100.00;
 
