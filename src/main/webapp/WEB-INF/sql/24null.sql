@@ -10,6 +10,10 @@ SELECT * FROM Products
 WHERE CategoryID = 2
    AND IFNULL(Price, 0) < 25.00; -- 10   
    
+SELECT * FROM Products
+WHERE CategoryID = 2
+  AND Price IS NULL;
+   
    
    
    
