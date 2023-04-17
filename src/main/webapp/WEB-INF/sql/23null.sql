@@ -31,7 +31,12 @@ FROM Products; -- 28.13
 -- CustomerId, CustomerName, ContactName, Address 조회
 -- ContactName이 NULL 이면 'Anonymous'로 
 -- Address 가 NULL 이면 'Homeless'로 조회
-
+SELECT CustomerID, 
+	CustomerName, 
+    IFNULL(ContactName, 'Anonymous') ContactName, 
+    IFNULL(Address, 'Homeless') Address
+FROM Customers
+ORDER BY 1 DESC;
 SELECT * FROM Customers ORDER BY 1 DESC;
 
 
