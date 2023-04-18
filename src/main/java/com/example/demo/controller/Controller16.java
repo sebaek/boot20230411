@@ -33,4 +33,11 @@ public class Controller16 {
 			System.out.println(cnt + "개 데이터 삭제됨");
 		}
 	}
+	
+	// 경로 /sub16/link2?id=30
+	// 고객테이블의 데이터 삭제 메소드 작성
 }
+
+
+
+
