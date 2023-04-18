@@ -83,4 +83,28 @@ public class Controller15 {
 		}
 
 	}
+
+	// /sub15/link4?firstName=박지성&lastName=두개의심장
+	// 직원정보 추가
+	@RequestMapping("link4")
+	public void method4(
+			@RequestParam("firstName") String fname,
+			@RequestParam("lastName") String lname) throws Exception {
+
+		String sql = """
+				INSERT INTO Employees (firstName, lastName)
+				VALUES (?, ?)
+				""";
+
+		try (
+				Connection con = DriverManager.getConnection(url, name, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, fname);
+			pstmt.setString(2, lname);
+			int count = pstmt.executeUpdate();
+
+			System.out.println(count + "개 행 추가됨");
+		}
+
+	}
 }
