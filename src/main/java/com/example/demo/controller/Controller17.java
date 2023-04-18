@@ -139,4 +139,24 @@ public class Controller17 {
 
 		}
 	}
+	
+	// 고객조회 (method4 참고)
+	@RequestMapping("link5")
+	public void method5(int id, Model model) {
+		
+	}
+	
+	// 고객정보 수정 (method3 참고)
+	@RequestMapping("link6")
+	public void method6(Customer customer) {
+		
+	}
 }
+
+
+
+
+
+
+
+
