@@ -28,26 +28,35 @@ public class Controller15 {
 		// INSERT, UPDATE, DELETE는
 		// Statement의 executeUpdate 메소드 사용
 		// 리턴값은 영향을 미친 레코드 수
-		
+
 		Connection con = DriverManager.getConnection(url, name, password);
 		Statement stmt = con.createStatement();
 		int count = stmt.executeUpdate(sql);
-		
-		try (con; stmt; ) {
-			
+
+		try (con; stmt;) {
+
 		}
-		
+
 		System.out.println(count + "개 행 추가됨");
-		
+
 	}
-	
-	// 경로: /sub15/link2 
+
+	// 경로: /sub15/link2
 	// 10번째 직원 추가
-	// 컬럼 : EmployeeID, LastName, FirstName 
-	
-	
+	// 컬럼 : EmployeeID, LastName, FirstName
+	@RequestMapping("link2")
+	public void method2() throws Exception {
+		String sql = """
+				INSERT INTO Employees (EmployeeID, LastName, FirstName)
+				VALUES
+				(10, '손흥민', 'son')
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, name, password);
+				Statement stmt = con.createStatement();) {
+			int count = stmt.executeUpdate(sql);
+			System.out.println(count + "개 행이 추가됨");
+		}
+	}
+
 }
-
-
-
-
