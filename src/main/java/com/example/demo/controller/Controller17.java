@@ -139,24 +139,80 @@ public class Controller17 {
 
 		}
 	}
-	
+
+	// ?id=103
 	// 고객조회 (method4 참고)
 	@RequestMapping("link5")
-	public void method5(int id, Model model) {
-		
+	public void method5(int id, Model model) throws Exception {
+		// 고객 조회
+		String sql = """
+				SELECT
+					CustomerId,
+					CustomerName,
+					ContactName,
+					Address,
+					City,
+					PostalCode,
+					Country
+				FROM Customers
+				WHERE CustomerId = ?
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setInt(1, id);
+			try (ResultSet rs = pstmt.executeQuery();) {
+
+				if (rs.next()) {
+					Customer c = new Customer();
+					c.setId(rs.getInt("customerId"));
+					c.setName(rs.getString("customerName"));
+					c.setContactName(rs.getString("contactName"));
+					c.setAddress(rs.getString("address"));
+					c.setCity(rs.getString("city"));
+					c.setPostalCode(rs.getString("postalCode"));
+					c.setCountry(rs.getString("country"));
+
+					model.addAttribute("customer", c);
+
+				}
+			}
+		}
+
+		// forward jsp
 	}
-	
+
 	// 고객정보 수정 (method3 참고)
 	@RequestMapping("link6")
-	public void method6(Customer customer) {
-		
+	public void method6(Customer customer) throws Exception {
+		String sql = """
+				UPDATE Customers
+				SET
+					customerName = ?,
+					contactName = ?,
+					address = ?,
+					city = ?,
+					postalCode = ?,
+					country = ?
+				WHERE
+					customerId = ?
+				""";
+		try (
+
+				Connection con = DriverManager.getConnection(url, username, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+
+			pstmt.setString(1, customer.getName());
+			pstmt.setString(2, customer.getContactName());
+			pstmt.setString(3, customer.getAddress());
+			pstmt.setString(4, customer.getCity());
+			pstmt.setString(5, customer.getPostalCode());
+			pstmt.setString(6, customer.getCountry());
+			pstmt.setInt(7, customer.getId());
+
+			int cnt = pstmt.executeUpdate();
+			System.out.println(customer.getId() + "번 고객 수정됨");
+		}
+
 	}
 }
-
-
-
-
-
-
-
-
