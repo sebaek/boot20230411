@@ -17,7 +17,12 @@ VALUES ('정대만', 'daeman');
 
 SELECT * FROM Customers ORDER BY 1 DESC;
 
-SELECT * FROM Suppliers;
+SELECT * FROM Suppliers ORDER BY 1 DESC;
 -- 문제1) 새 공급자 데이터 추가 
 -- (SupplierId, SupplierName, City)
 -- 자동증가 컬럼은 직접 값을 넣지 않고
+DESC Suppliers;
+INSERT INTO Suppliers 
+(SupplierName, City)
+VALUES
+('채치수', 'Seoul');
