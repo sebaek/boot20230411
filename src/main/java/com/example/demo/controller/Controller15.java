@@ -59,4 +59,28 @@ public class Controller15 {
 		}
 	}
 
+	// /sub15/link3?customerName=송태섭&city=부산&country=한국
+	@RequestMapping("link3")
+	public void method3(
+			@RequestParam("customerName") String customerName,
+			@RequestParam("city") String city,
+			@RequestParam("country") String country) throws Exception {
+		String sql = """
+				INSERT INTO Customers
+				(CustomerName, City, Country)
+				VALUES
+				(?, ?, ?)
+				""";
+
+		try (Connection con = DriverManager.getConnection(url, name, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, customerName);
+			pstmt.setString(2, city);
+			pstmt.setString(3, country);
+
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "개 행 추가됨");
+		}
+
+	}
 }
