@@ -137,25 +137,41 @@ public class Controller15 {
 		}
 
 	}
-	
+
 	// 경로 : /sub15/link7
 	// 폼이 있는 jsp로 포워드
-	
-	// 경로 : /sub15/link8
-	public void method8(
-			@RequestParam("name") String name, 
-			@RequestParam("city") String city,
-			@RequestParam("country") String country) {
+	@RequestMapping("link7")
+	public void mehtod7() {
 		
-		// 3개 메소드 파라미터 활용해서
-		// suppliers 테이블에 레코드 추가 
 	}
-	
-	
+
+	// 경로 : /sub15/link8
+	@RequestMapping("link8")
+	public void method8(
+			@RequestParam("name") String name,
+			@RequestParam("city") String city,
+			@RequestParam("country") String country) throws Exception {
+
+		// 3개 메소드 파라미터 활용해서
+		// suppliers 테이블에 레코드 추가
+
+		String sql = """
+				INSERT INTO Suppliers
+				(SupplierName, City, Country)
+				VALUES (?, ?, ?)
+				""";
+
+		try (
+				Connection con = DriverManager.getConnection(url, this.name, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, name);
+			pstmt.setString(2, city);
+			pstmt.setString(3, country);
+			int count = pstmt.executeUpdate();
+
+			System.out.println(count + "개 정보 입력됨");
+		}
+
+	}
 
 }
-
-
-
-
-
