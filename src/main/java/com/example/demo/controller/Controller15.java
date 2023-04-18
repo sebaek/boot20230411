@@ -221,7 +221,7 @@ public class Controller15 {
 				""";
 		try (
 				Connection con = DriverManager.getConnection(url, name, password);
-				PreparedStatement pstmt = con.prepareStatement(sql);) {
+				PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
 			pstmt.setString(1, supplier.getName());
 			pstmt.setString(2, supplier.getContactName());
 			pstmt.setString(3, supplier.getCity());
@@ -230,8 +230,17 @@ public class Controller15 {
 			pstmt.setString(6, supplier.getPhone());
 			pstmt.setString(7, supplier.getAddress());
 			int cnt = pstmt.executeUpdate();
+			
+			// 자동생성된 컬럼(키) 값 얻기
+			ResultSet key = pstmt.getGeneratedKeys();
+
+			int keyValue = 0;
+			if (key.next()) {
+				keyValue = key.getInt(1);
+			}
 
 			System.out.println(cnt + "개 데이터 입력됨");
+			System.out.println(keyValue + "번 공급자 데이터 입력됨");
 		}
 
 	}
