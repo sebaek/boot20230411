@@ -203,25 +203,37 @@ public class Controller15 {
 		}
 
 	}
-	
+
 	// 경로 : /sub15/link11
+	@RequestMapping("link11")
 	public void method11() {
-		
+
 	}
-	
+
 	// 경로 : /sub15/link12
-	public void method12(Supplier supplier) {
-		//공급자 테이블에 데이터 입력
-		
+	@RequestMapping("link12")
+	public void method12(Supplier supplier) throws Exception {
+		// 공급자 테이블에 데이터 입력
+		String sql = """
+				INSERT INTO Suppliers
+				(SupplierName, ContactName, City, PostalCode, Country, Phone, Address)
+				VALUES (?, ?, ?, ?, ?, ?, ?)
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, name, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, supplier.getName());
+			pstmt.setString(2, supplier.getContactName());
+			pstmt.setString(3, supplier.getCity());
+			pstmt.setString(4, supplier.getPostalCode());
+			pstmt.setString(5, supplier.getCountry());
+			pstmt.setString(6, supplier.getPhone());
+			pstmt.setString(7, supplier.getAddress());
+			int cnt = pstmt.executeUpdate();
+
+			System.out.println(cnt + "개 데이터 입력됨");
+		}
+
 	}
 
 }
-
-
-
-
-
-
-
-
-
