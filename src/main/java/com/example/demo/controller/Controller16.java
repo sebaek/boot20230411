@@ -36,7 +36,36 @@ public class Controller16 {
 	
 	// 경로 /sub16/link2?id=30
 	// 고객테이블의 데이터 삭제 메소드 작성
+	@RequestMapping("link2")
+	public void method2(int id) throws Exception {
+		String sql = """
+				DELETE FROM Customers
+				WHERE CustomerId = ?
+				""";
+		
+		try (
+		Connection con = DriverManager.getConnection(url, name, password);
+		PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			pstmt.setInt(1, id);
+			int cnt = pstmt.executeUpdate();
+			
+			System.out.println(cnt + "개 데이터 삭제됨");
+		}
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
