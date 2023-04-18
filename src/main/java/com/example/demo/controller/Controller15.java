@@ -203,5 +203,25 @@ public class Controller15 {
 		}
 
 	}
+	
+	// 경로 : /sub15/link11
+	public void method11() {
+		
+	}
+	
+	// 경로 : /sub15/link12
+	public void method12(Supplier supplier) {
+		//공급자 테이블에 데이터 입력
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
