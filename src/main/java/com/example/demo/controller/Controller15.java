@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
+
 @Controller
 @RequestMapping("sub15")
 public class Controller15 {
@@ -142,7 +144,7 @@ public class Controller15 {
 	// 폼이 있는 jsp로 포워드
 	@RequestMapping("link7")
 	public void mehtod7() {
-		
+
 	}
 
 	// 경로 : /sub15/link8
@@ -170,6 +172,34 @@ public class Controller15 {
 			int count = pstmt.executeUpdate();
 
 			System.out.println(count + "개 정보 입력됨");
+		}
+
+	}
+
+	@RequestMapping("link9")
+	public void method9() {
+
+	}
+
+	@RequestMapping("link10")
+	public void method10(@ModelAttribute("customer") Customer customer)
+			throws Exception {
+
+		String sql = """
+				INSERT INTO Customers
+				(CustomerName, ContactName, Address)
+				VALUES
+				(?, ?, ?)
+				""";
+
+		try (
+				Connection con = DriverManager.getConnection(url, name, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, customer.getName());
+			pstmt.setString(2, customer.getContactName());
+			pstmt.setString(3, customer.getAddress());
+			int cnt = pstmt.executeUpdate();
+
 		}
 
 	}
