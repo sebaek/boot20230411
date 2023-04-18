@@ -107,4 +107,35 @@ public class Controller15 {
 		}
 
 	}
+
+	@RequestMapping("link5")
+	public void method5() {
+		// form 이 있는 view로 포워드
+		// view : /WEB-INF/views/sub15/link5.jsp
+	}
+
+	@RequestMapping("link6")
+	public void method6(
+			@RequestParam("firstName") String firstName,
+			@RequestParam("lastName") String lastName) throws Exception {
+
+		System.out.println(firstName);
+		System.out.println(lastName);
+
+		String sql = """
+				INSERT INTO Employees (FirstName, LastName)
+				VALUES (?, ?)
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, name, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, firstName);
+			pstmt.setString(2, lastName);
+			int count = pstmt.executeUpdate();
+			System.out.println(count + "개 행 입력");
+
+		}
+
+	}
+
 }
