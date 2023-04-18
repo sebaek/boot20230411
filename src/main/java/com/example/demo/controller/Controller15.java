@@ -212,7 +212,8 @@ public class Controller15 {
 
 	// 경로 : /sub15/link12
 	@RequestMapping("link12")
-	public void method12(Supplier supplier) throws Exception {
+	@ResponseBody
+	public String method12(Supplier supplier) throws Exception {
 		// 공급자 테이블에 데이터 입력
 		String sql = """
 				INSERT INTO Suppliers
@@ -241,8 +242,15 @@ public class Controller15 {
 
 			System.out.println(cnt + "개 데이터 입력됨");
 			System.out.println(keyValue + "번 공급자 데이터 입력됨");
+			
+			return keyValue + "번 공급자 데이터 입력됨";
 		}
 
 	}
 
 }
+
+
+
+
+
