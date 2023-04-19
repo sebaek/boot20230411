@@ -17,7 +17,8 @@ public class Controller18 {
 	@Value("${spring.datasource.password}")
 	private String password;
 
-	@RequestMapping("link1")
+	// 트랜잭션 없이 모두 실행
+	@RequestMapping("link1") 
 	public void method1() {
 		String sql1 = """
 				UPDATE Bank
@@ -40,6 +41,40 @@ public class Controller18 {
 
 			System.out.println("이체 완료");
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	// 트랜잭션 설정없이 중간에 exception 발생
+	@RequestMapping("link2") 
+	public void method2() {
+		String sql1 = """
+				UPDATE Bank
+				SET money = money - 5000
+				WHERE customerName = 'A'
+				""";
+		String sql2 = """
+				UPDATE Bank
+				SET money = money + 5000
+				WHERE customerName = 'B'
+				""";
+
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt1 = con.createStatement();
+				Statement stmt2 = con.createStatement();) {
+			
+			stmt1.executeUpdate(sql1);
+			
+			// exception 발생
+			int a = 3 / 0; 
+			
+			stmt2.executeUpdate(sql2);
+
+			System.out.println("이체 완료");
+		} catch (Exception e) {
+			System.out.println("이체 실패");
 			e.printStackTrace();
 		}
 
