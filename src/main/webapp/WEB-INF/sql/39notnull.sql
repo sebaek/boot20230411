@@ -42,6 +42,14 @@ INSERT INTO MyTable19 (Col1) VALUES (100); -- fail
 INSERT INTO MyTable19 (Col1, Col2) 
 VALUES (NULL, 200); -- ok
 
+-- not null default 조합 가능
+CREATE TABLE MyTable20 (
+	Col1 INT, -- null 허용, default 없음
+    Col2 INT NOT NULL, -- null 허용안함, default 없음
+    Col3 INT DEFAULT 0, -- null 허용, default 0
+    Col4 INT NOT NULL DEFAULT 0 -- null 허용안함 default 0
+);
+DESC MyTable20;
 
 
 
