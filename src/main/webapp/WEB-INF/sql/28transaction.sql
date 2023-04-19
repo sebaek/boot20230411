@@ -51,6 +51,7 @@ WHERE customerName = 'A'; -- 실행됨
 -- 오류 생겼다고 가정
 SELECT * FROM Bank;
 ROLLBACK;
+COMMIT;
 
 
 
