@@ -71,6 +71,14 @@ SELECT * FROM MyTable06;
 
 -- 연습) MyTable07 만들기
 -- 두개 컬럼 (실수형), 총길이, 소수점이하길이 직접 작성
+CREATE TABLE MyTable07 (
+	MyCol1 DEC(10, 3),
+    MyCol2 DEC(20, 5)
+);
+INSERT INTO MyTable07 (MyCol1, MyCol2)
+VALUES (9999999.999, 999999.99999);
+SELECT * FROM MyTable07;
+
 
 
 -- 날짜시간
