@@ -12,7 +12,9 @@ ALTER TABLE MyTable13
 CHANGE COLUMN col13 col3 VARCHAR(3); -- fail
 
 -- 연습) col10 을 col20 VARCHAR(20)으로 변경
-
+ALTER TABLE MyTable13
+CHANGE COLUMN col10 col20 VARCHAR(20);
+DESC MyTable13;
 
 
 
