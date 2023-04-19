@@ -57,8 +57,20 @@ VALUES (2147483648, -2147483648); -- fail
 SELECT * FROM MyTable05;
 
 
+-- DEC  실수형
+-- DEC(총길이, 소수점이하길이) 
+CREATE TABLE MyTable06 (
+	Col1 DEC(5, 2),
+    Col2 DEC(3, 1)
+);
+INSERT INTO MyTable06 (Col1) VALUES (999.99); -- ok
+INSERT INTO MyTable06 (Col1) VALUES (-999.99); -- ok
+INSERT INTO MyTable06 (Col1) VALUES (1000.99); -- fail
+INSERT INTO MyTable06 (Col1) VALUES (999.999); -- fail
+SELECT * FROM MyTable06;
 
-
+-- 연습) MyTable07 만들기
+-- 두개 컬럼 (실수형), 총길이, 소수점이하길이 직접 작성
 
 
 -- 날짜시간
