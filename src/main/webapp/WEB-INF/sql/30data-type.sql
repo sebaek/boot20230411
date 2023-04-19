@@ -124,6 +124,30 @@ INSERT INTO MyTable09 (Name, Gender, BirthDate, Score, Extra)
 VALUES ('손흥민', '여', '2000-02-02', 99.99, '축구선수');
 SELECT * FROM MyTable09;
 
+-- 연습) 내가 가지고 있는 교재정보 저장 MyTable10
+-- 책제목, 저자, 출판사, 출판일, 가격, 기타
+CREATE TABLE MyTable10 (
+	Title VARCHAR(100),
+    Writer VARCHAR(20),
+    Publisher VARCHAR(50),
+    Published DATE,
+    Price INT,
+    Extra VARCHAR(1000)
+);
+DESC MyTable10;
+INSERT INTO MyTable10 (Title, Writer, Publisher, Published, Price, Extra)
+VALUES 
+('이것이자바다', '신용권', '한빛', '2022-01-01', 30000, '평점 좋음');
+INSERT INTO MyTable10 (Title, Writer, Publisher, Published, Price, Extra)
+VALUES
+('JSP 2.3', '홍길동', '가메출판사', '2000-12-31', 20000, '평점 보통');
+
+SELECT * FROM MyTable10;
+
+
+
+
+
 
 
 
