@@ -105,8 +105,11 @@ VALUES ('9999-12-31 23:59:59');
 INSERT INTO MyTable08 (Col2)
 VALUES ('1000-01-01 00:00:00');
 
+SELECT NOW();
 
-
+INSERT INTO MyTable08 (Col1, Col2)
+VALUES (now(), now());
+SELECT * FROM MyTable08;
 
 
 
