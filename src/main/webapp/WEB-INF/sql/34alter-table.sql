@@ -20,6 +20,17 @@ ALTER TABLE MyTable13 ADD COLUMN col6 INT FIRST;
 ALTER TABLE MyTable13 ADD COLUMN col7 INT FIRST;
 DESC MyTable13;
 
+-- 중간에 컬럼 추가
+ALTER TABLE MyTable13 
+ADD COLUMN col8 VARCHAR(9) AFTER col7;
+DESC MyTable13;
+
+-- 연습) 첫번째 컬럼으로 하나 추가
+ALTER TABLE MyTable13 ADD COLUMN col9 INT FIRST;
+DESC MyTable13;
+-- 연습) 컬럼을 중간에 추가
+ALTER TABLE MyTable13 ADD COLUMN col10 INT AFTER col6;
+
 
 
 
