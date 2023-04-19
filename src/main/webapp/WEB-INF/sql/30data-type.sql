@@ -43,5 +43,22 @@ SELECT * FROM MyTable04;
 
 -- 연습 ) MyTable05 만들기
 -- 두개의 컬럼이 모두 정수 저장 가능
+CREATE TABLE MyTable05 (
+	Col1 INT,
+    Col2 INT
+);
+DESC MyTable05;
+-- 최대값 : 2147483647
+-- 최소값 : -2147483648
+INSERT INTO MyTable05 (Col1, Col2)
+VALUES (2147483647, -2147483648); -- ok
+INSERT INTO MyTable05 (Col1, Col2)
+VALUES (2147483648, -2147483648); -- fail
+SELECT * FROM MyTable05;
+
+
+
+
+
 
 -- 날짜시간
