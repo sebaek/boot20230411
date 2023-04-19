@@ -22,10 +22,18 @@ VALUES (1, 1); -- ok
 INSERT INTO MyTable26 (col1, col2)
 VALUES (2, 2); -- ok
 INSERT INTO MyTable26 (col1, col2)
-VALues (1, 2); -- ??
+VALues (1, 2); -- ok
 SELECT * FROM MyTable26;
+-- Primary Key : 하나의 테이블에 하나
+CREATE Table MyTable27 (
+	Col1 INT,
+    Col2 INT,
+    PRIMARY KEY (Col1),
+    PRIMARY KEY (Col2)
+); -- fail 
 
-
+-- 제약사항 (CONSTRAINTS)
+-- DEFAULT, UNIQUE, NOT NULL, PRIMARY KEY
 
 
 
