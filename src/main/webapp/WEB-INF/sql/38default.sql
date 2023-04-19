@@ -17,7 +17,28 @@ CREATE TABLE MyTable15 (
 );
 -- 연습) 3개행 추가
 -- 1) Col1과 Col2에 모두 값 넣기
+INSERT INTO MyTable15 
+VALUES ('서태웅', '강백호');
 -- 2) Col2에만 값 넣고
+INSERT INTO MyTable15  (Col2)
+VALUES ('채치수');
 -- 3) Col1에만 값 넣기
+INSERT INTO MyTable15  (Col1)
+VALUES ('송태섭');
+SELECT * FROM MyTable15;
+DESC MyTable15;
+DESC MyTable14;
+
+CREATE TABLE MyTable16 (
+	Col1 DATE DEFAULT '2000-01-01',
+    Col2 DATE DEFAULT NOW(),
+    Col3 DATETIME DEFAULT '1900-01-01 00:00:00',
+    Col4 DATETIME DEFAULT NOW()
+);
+INSERT INTO MyTable16 (Col1) VALUES ('3000-03-03');
+INSERT INTO MyTable16 (Col2) VALUES ('4000-04-04');
+INSERT INTO MyTable16 (Col3) VALUES ('5000-05-05 05:05:05');
+INSERT INTO MyTable16 (Col4) VALUES ('6000-06-06 06:06:06');
+SELECT * FROM MyTable16;
 
 
