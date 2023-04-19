@@ -111,5 +111,19 @@ INSERT INTO MyTable08 (Col1, Col2)
 VALUES (now(), now());
 SELECT * FROM MyTable08;
 
+-- 예제) MyTable09 (학생 정보)
+-- 학생이름, 성별, 생년월일, 기타정보, 시험성적
+CREATE TABLE MyTable09 (
+	Name VARCHAR(20),
+    Gender VARCHAR(1),
+    BirthDate DATE,
+    Score DEC(5, 2),
+    Extra VARCHAR(1000)
+);
+INSERT INTO MyTable09 (Name, Gender, BirthDate, Score, Extra)
+VALUES ('손흥민', '여', '2000-02-02', 99.99, '축구선수');
+SELECT * FROM MyTable09;
+
+
 
 
