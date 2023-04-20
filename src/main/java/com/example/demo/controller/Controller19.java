@@ -124,7 +124,7 @@ public class Controller19 {
 	public void method7(
 			@RequestParam("name") String name,
 			@RequestParam("age") String age,
-			@RequestParam("pirce") String price,
+			@RequestParam("price") String price,
 			@RequestParam("birth") String birth,
 			@RequestParam("inserted") String inserted) throws Exception {
 
