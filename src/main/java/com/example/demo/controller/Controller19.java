@@ -322,4 +322,18 @@ public class Controller19 {
 		model.addAttribute("memberList", list);
 		// 4. forward/redirect
 	}
+	
+	// /sub19/link15
+	// MyTable33 에 있는 데이터들 jsp에서 보여주기
+	// 메소드, java beans, jsp
+	
+	// 선택)link9에서 데이터 더 넣기
 }
+
+
+
+
+
+
+
+
