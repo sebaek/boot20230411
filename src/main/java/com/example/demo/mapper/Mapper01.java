@@ -40,6 +40,13 @@ public interface Mapper01 {
 			WHERE EmployeeId = #{id}
 			""")
 	String method5(Integer id);
+	
+	@Select("""
+			SELECT Price
+			FROM MyTable33
+			LIMIT 1
+			""")
+	Integer method6();
 }
 
 

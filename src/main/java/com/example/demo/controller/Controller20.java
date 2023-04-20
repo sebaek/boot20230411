@@ -51,6 +51,19 @@ public class Controller20 {
 		System.out.println(mapper.method5(id));
 	}
 	
+	
+	@RequestMapping("link6")
+	public void method6() {
+		Integer price = mapper.method6();
+		System.out.println(price);
+		
+		// mapper01 에  method7 작성
+		// 하나의 row의 weight 컬럼의 값 리턴
+		Double weight = mapper.method7();
+		System.out.println(weight);
+	}
+	
+
 }
 
 
