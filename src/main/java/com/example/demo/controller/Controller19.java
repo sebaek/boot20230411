@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.sql.*;
+import java.time.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -144,4 +145,31 @@ public class Controller19 {
 			System.out.println(cnt + "개 행 입력됨");
 		}
 	}
+
+	@RequestMapping("link8")
+	public void method8(
+			@RequestParam("name") String name,
+			@RequestParam("age") Integer age,
+			@RequestParam("price") Double price,
+			@RequestParam("birth") LocalDate birth,
+			@RequestParam("inserted") LocalDateTime inserted) throws Exception {
+
+		String sql = """
+				INSERT INTO MyTable32 (Name, Age, Price, Birth, Inserted)
+				VALUES (?, ?, ?, ?, ?)
+				""";
+		try (Connection con = DriverManager.getConnection(url, username, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+
+			pstmt.setString(1, name);
+			pstmt.setInt(2, age);
+			pstmt.setDouble(3, price);
+			pstmt.setDate(4, Date.valueOf(birth));
+			pstmt.setTimestamp(5, Timestamp.valueOf(inserted));
+			int cnt = pstmt.executeUpdate();
+			System.out.println(cnt + "행 추가됨");
+		}
+
+	}
+
 }

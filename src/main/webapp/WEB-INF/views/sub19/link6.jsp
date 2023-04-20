@@ -17,8 +17,20 @@
 		가격 : <input type="text" name="price" /> <br />
 		생일 : <input type="date" name="birth" /> <br />
 		입력일시 : <input type="datetime-local" name="inserted" /> <br />
-		<input type="submit" value="전송" />
+		<input type="submit" value="link7로 전송" />
 	</form>
+	
+	<hr />
+	
+	<form action="/sub19/link8" method="post">
+		이름 : <input type="text" name="name" /> <br />
+		나이 : <input type="number" name="age" /> <br />
+		가격 : <input type="text" name="price" /> <br />
+		생일 : <input type="date" name="birth" /> <br />
+		입력일시 : <input type="datetime-local" name="inserted" /> <br />
+		<input type="submit" value="link8로 전송" />
+	</form>
+	
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
