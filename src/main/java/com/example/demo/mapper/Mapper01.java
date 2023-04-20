@@ -110,6 +110,21 @@ public interface Mapper01 {
 			WHERE CustomerId = 7
 			""")
 	Customer method12();
+
+	@Select("""
+			SELECT
+				SupplierId id,
+				SupplierName name,
+				ContactName,
+				City,
+				Country,
+				Address,
+				PostalCode,
+				Phone
+			FROM Suppliers
+			WHERE SupplierId = 2
+			""")
+	Supplier method13();
 	
 }
 
