@@ -257,5 +257,13 @@ public class Controller19 {
 			}
 		}
 	}
+	
+	// MyTable32의 데이터 조회후 출력하는
+	// 13번 메소드 작성
 
 }
+
+
+
+
+
