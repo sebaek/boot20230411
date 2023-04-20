@@ -125,7 +125,19 @@ public interface Mapper01 {
 			WHERE SupplierId = 2
 			""")
 	Supplier method13();
-	
+
+	@Select("""
+			SELECT
+				EmployeeId id,
+				LastName,
+				FirstName,
+				BirthDate birth,
+				Photo,
+				Notes
+			FROM Employees
+			WHERE EmployeeId = 5
+			""")
+	Employee method14();
 }
 
 

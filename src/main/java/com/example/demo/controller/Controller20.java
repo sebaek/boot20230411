@@ -96,7 +96,7 @@ public class Controller20 {
 		System.out.println(sup); // 2번 공급자 정보출력
 	}
 	
-
+	// method11 mapper.method14() 실행 결과 콘솔에 출력
 }
 
 
