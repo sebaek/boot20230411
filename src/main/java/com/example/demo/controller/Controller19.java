@@ -114,4 +114,24 @@ public class Controller19 {
 			
 		}
 	}
+	
+	@RequestMapping("link6")
+	public void method6() {
+		// forward to form
+		// /WEB-INF/views/sub19/link6.jsp
+	}
+	
+	@RequestMapping("link7")
+	public void method7() {
+		
+	}
 }
+
+
+
+
+
+
+
+
+
