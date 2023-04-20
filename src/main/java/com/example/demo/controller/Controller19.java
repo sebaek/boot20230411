@@ -1,11 +1,16 @@
 package com.example.demo.controller;
 
 import java.sql.*;
+import java.sql.Date;
 import java.time.*;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.domain.*;
 
 @Controller
 @RequestMapping("sub19")
@@ -231,7 +236,7 @@ public class Controller19 {
 			}
 		}
 	}
-	
+
 	@RequestMapping("link12")
 	public void method12() throws Exception {
 		String sql = """
@@ -257,13 +262,64 @@ public class Controller19 {
 			}
 		}
 	}
-	
+
 	// MyTable32의 데이터 조회후 출력하는
 	// 13번 메소드 작성
+	@RequestMapping("link13")
+	public void method13() throws Exception {
+		String sql = """
+				SELECT Name, Age, Price, Birth, Inserted
+				FROM MyTable32
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
 
+			if (rs.next()) {
+				String string = rs.getString("name");
+				int int1 = rs.getInt("age");
+				double double1 = rs.getDouble("price");
+				LocalDate localDate = rs.getDate("birth").toLocalDate();
+				LocalDateTime localDateTime = rs.getTimestamp("inserted").toLocalDateTime();
+
+				System.out.println("이름:" + string);
+				System.out.println("나이:" + int1);
+				System.out.println("가격:" + double1);
+				System.out.println("생일:" + localDate);
+				System.out.println("입력일시:" + localDateTime);
+
+			}
+		}
+	}
+
+	@RequestMapping("link14")
+	public void method14(Model model) throws Exception {
+		// 1. request param 수집/가공
+		// 2. business logic (crud)
+		List<Dto05> list = new ArrayList<>();
+		String sql = """
+				SELECT Name, Age, Price, Birth, Inserted
+				FROM MyTable32
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
+
+			while (rs.next()) {
+				Dto05 o = new Dto05();
+				o.setName(rs.getString("name"));
+				o.setAge(rs.getInt("age"));
+				o.setPrice(rs.getDouble("price"));
+				o.setBirth(rs.getDate("birth").toLocalDate());
+				o.setInserted(rs.getTimestamp("inserted").toLocalDateTime());
+				
+				list.add(o);
+			}
+		}
+		// 3. add attribute
+		model.addAttribute("memberList", list);
+		// 4. forward/redirect
+	}
 }
-
-
-
-
-
