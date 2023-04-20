@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
 import com.example.demo.mapper.*;
 
 @Controller
@@ -69,6 +70,30 @@ public class Controller20 {
 		
 		LocalDateTime updated = mapper.method9();
 		System.out.println(updated);
+	}
+	
+	@RequestMapping("link7")
+	public void method() {
+		Dto06 res = mapper.method10();
+		System.out.println(res);
+	}
+	
+	@RequestMapping("link8")
+	public void method8() {
+		Dto05 res = mapper.method11();
+		System.out.println(res);
+	}
+	
+	@RequestMapping("link9")
+	public void method9() {
+		Customer cus = mapper.method12();
+		System.out.println(cus);
+	}
+	
+	@RequestMapping("link10")
+	public void method10() {
+		Supplier sup = mapper.method13();
+		System.out.println(sup); // 2번 공급자 정보출력
 	}
 	
 
