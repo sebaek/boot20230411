@@ -18,6 +18,20 @@ public interface Mapper01 {
 			WHERE EmployeeId = 1
 			""")
 	String method2();
+
+	@Select("""
+			SELECT SupplierName
+			FROM Suppliers
+			WHERE SupplierID = 1
+			""")
+	String method3();
+	
+	@Select("""
+			SELECT CustomerName
+			FROM Customers
+			WHERE CustomerID = #{id}
+			""")
+	String method4(Integer id);
 }
 
 
