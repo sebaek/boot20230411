@@ -206,4 +206,30 @@ public class Controller19 {
 
 	}
 
+	@RequestMapping("link11")
+	public void method11() throws Exception {
+		String sql = """
+				SELECT Title, Published, Price, Updated, Weight
+				FROM MyTable33
+				""";
+		try (Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
+
+			if (rs.next()) {
+				String title = rs.getString("title");
+				String published = rs.getString("published");
+				String price = rs.getString("price");
+				String updated = rs.getString("updated");
+				String weight = rs.getString("weight");
+
+				System.out.println("제목:" + title);
+				System.out.println("출판일:" + published);
+				System.out.println("가격:" + price);
+				System.out.println("수정일시:" + updated);
+				System.out.println("무게:" + weight);
+			}
+		}
+	}
+
 }
