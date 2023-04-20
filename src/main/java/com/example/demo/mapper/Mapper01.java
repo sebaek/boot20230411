@@ -11,6 +11,13 @@ public interface Mapper01 {
 			WHERE CustomerID = 1
 			""")
 	String method1();
+	
+	@Select("""
+			SELECT FirstName
+			FROM Employees
+			WHERE EmployeeId = 1
+			""")
+	String method2();
 }
 
 
