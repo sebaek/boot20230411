@@ -328,6 +328,33 @@ public class Controller19 {
 	// 메소드, java beans, jsp
 	
 	// 선택)link9에서 데이터 더 넣기
+	@RequestMapping("link15")
+	public void method15(Model model) throws Exception {
+		List<Dto06> list = new ArrayList<>();
+		String sql = """
+				SELECT Title, Published, Price, Updated, Weight
+				FROM MyTable33
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				Dto06 o = new Dto06();
+				o.setTitle(rs.getString("title"));
+				o.setPublished(rs.getDate("published").toLocalDate());
+				o.setPrice(rs.getInt("price"));
+				o.setUpdated(rs.getTimestamp("updated").toLocalDateTime());
+				o.setWeight(rs.getDouble("weight"));
+				
+				list.add(o);
+			}
+		
+		}
+		model.addAttribute("bookList", list);
+	}
 }
 
 
