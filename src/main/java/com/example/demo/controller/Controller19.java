@@ -90,15 +90,28 @@ public class Controller19 {
 		}
 
 	}
-	
-	//경로 /sub19/link5
+
+	// 경로 /sub19/link5
 	// MyTable32에 새 레코드 추가하는 메소드 완성
-	
+	@RequestMapping("link5")
+	public void method5() throws Exception {
+		String sql = """
+				INSERT INTO MyTable32 (Name, Age, Price, Birth, Inserted)
+				VALUES (?, ?, ?, ?, ?)
+				""";
+
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, "박지성");
+			pstmt.setInt(2, 40);
+			pstmt.setDouble(3, 3.14);
+			pstmt.setDate(4, Date.valueOf("1999-01-01"));
+			pstmt.setTimestamp(5, Timestamp.valueOf("1980-12-31 12:12:12"));
+			int cnt = pstmt.executeUpdate();
+			System.out.println(cnt + "개 행 입력완료");
+			
+			
+		}
+	}
 }
-
-
-
-
-
-
-
