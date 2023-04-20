@@ -47,8 +47,8 @@ public class Controller20 {
 	// link5?id=2
 	// 2번 직원의 lastName을 콘솔에 출력
 	@RequestMapping("link5")
-	public void metho5() {
-		System.out.println(mapper.method5());
+	public void method5(Integer id) {
+		System.out.println(mapper.method5(id));
 	}
 	
 }

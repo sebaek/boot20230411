@@ -32,6 +32,14 @@ public interface Mapper01 {
 			WHERE CustomerID = #{id}
 			""")
 	String method4(Integer id);
+	
+	
+	@Select("""
+			SELECT LastName
+			FROM Employees
+			WHERE EmployeeId = #{id}
+			""")
+	String method5(Integer id);
 }
 
 
