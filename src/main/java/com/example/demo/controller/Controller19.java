@@ -187,27 +187,23 @@ public class Controller19 {
 			@RequestParam("price") Integer price,
 			@RequestParam("weight") Double weight,
 			@RequestParam("updateDateTime") LocalDateTime updated) throws Exception {
-		
+
 		String sql = """
 				INSERT INTO MyTable33 (Title, Published, Price, Weight, Updated)
 				VALUES (?, ?, ?, ?, ?)
 				""";
-		try(Connection con = DriverManager.getConnection(url, username, password);
+		try (Connection con = DriverManager.getConnection(url, username, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			
-		pstmt.setString(1, title);
-		pstmt.setDate(2, Date.valueOf(published));
-		pstmt.setInt(3, price);
-		pstmt.setDouble(4, weight);
-		pstmt.setTimestamp(5, Timestamp.valueOf(updated));
-		int cnt = pstmt.executeUpdate();
-		System.out.println(cnt + "개 데이터 입력됨");
+
+			pstmt.setString(1, title);
+			pstmt.setDate(2, Date.valueOf(published));
+			pstmt.setInt(3, price);
+			pstmt.setDouble(4, weight);
+			pstmt.setTimestamp(5, Timestamp.valueOf(updated));
+			int cnt = pstmt.executeUpdate();
+			System.out.println(cnt + "개 데이터 입력됨");
 		}
 
 	}
 
 }
-
-
-
-
