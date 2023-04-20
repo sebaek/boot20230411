@@ -171,5 +171,18 @@ public class Controller19 {
 		}
 
 	}
+	
+	// method9 : form이 있는 view로 포워드
+	// method10 : 전송된 데이터를 MyTable33에 추가
 
 }
+
+
+
+
+
+
+
+
+
+
