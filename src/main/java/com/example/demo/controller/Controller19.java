@@ -231,5 +231,31 @@ public class Controller19 {
 			}
 		}
 	}
+	
+	@RequestMapping("link12")
+	public void method12() throws Exception {
+		String sql = """
+				SELECT Title, Published, Price, Updated, Weight
+				FROM MyTable33
+				""";
+		try (Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);) {
+
+			if (rs.next()) {
+				String title = rs.getString("title");
+				LocalDate published = rs.getDate("published").toLocalDate();
+				Integer price = rs.getInt("price");
+				LocalDateTime updated = rs.getTimestamp("updated").toLocalDateTime();
+				Double weight = rs.getDouble("weight");
+
+				System.out.println("제목:" + title);
+				System.out.println("출판일:" + published);
+				System.out.println("가격:" + price);
+				System.out.println("수정일시:" + updated);
+				System.out.println("무게:" + weight);
+			}
+		}
+	}
 
 }
