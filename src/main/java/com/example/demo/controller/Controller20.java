@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.time.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
@@ -61,6 +63,12 @@ public class Controller20 {
 		// 하나의 row의 weight 컬럼의 값 리턴
 		Double weight = mapper.method7();
 		System.out.println(weight);
+		
+		LocalDate published = mapper.method8();
+		System.out.println(published);
+		
+		LocalDateTime updated = mapper.method9();
+		System.out.println(updated);
 	}
 	
 
