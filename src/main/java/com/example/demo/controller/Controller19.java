@@ -110,28 +110,38 @@ public class Controller19 {
 			pstmt.setTimestamp(5, Timestamp.valueOf("1980-12-31 12:12:12"));
 			int cnt = pstmt.executeUpdate();
 			System.out.println(cnt + "개 행 입력완료");
-			
-			
+
 		}
 	}
-	
+
 	@RequestMapping("link6")
 	public void method6() {
 		// forward to form
 		// /WEB-INF/views/sub19/link6.jsp
 	}
-	
+
 	@RequestMapping("link7")
-	public void method7() {
-		
+	public void method7(
+			@RequestParam("name") String name,
+			@RequestParam("age") String age,
+			@RequestParam("pirce") String price,
+			@RequestParam("birth") String birth,
+			@RequestParam("inserted") String inserted) throws Exception {
+
+		String sql = """
+				INSERT INTO MyTable32 (Name, Age, Price, Birth, Inserted)
+				VALUES (?, ?, ?, ?, ?)
+				""";
+		try (Connection con = DriverManager.getConnection(url, username, password);
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+
+			pstmt.setString(1, name);
+			pstmt.setString(2, age);
+			pstmt.setString(3, price);
+			pstmt.setString(4, birth);
+			pstmt.setString(5, inserted);
+			int cnt = pstmt.executeUpdate();
+			System.out.println(cnt + "개 행 입력됨");
+		}
 	}
 }
-
-
-
-
-
-
-
-
-
