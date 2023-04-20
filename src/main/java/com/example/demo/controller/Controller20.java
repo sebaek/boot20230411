@@ -97,6 +97,10 @@ public class Controller20 {
 	}
 	
 	// method11 mapper.method14() 실행 결과 콘솔에 출력
+	@RequestMapping("link11")
+	public void method11() {
+		System.out.println(mapper.method14());
+	}
 }
 
 
