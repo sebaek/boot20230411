@@ -90,4 +90,15 @@ public class Controller19 {
 		}
 
 	}
+	
+	//경로 /sub19/link5
+	// MyTable32에 새 레코드 추가하는 메소드 완성
+	
 }
+
+
+
+
+
+
+
