@@ -16,6 +16,12 @@ public interface Mapper04 {
 			""")
 	int sql2(Integer id);
 
+	@Delete("""
+			DELETE FROM Customers
+			WHERE CustomerID = #{id}
+			""")
+	int sql3(Integer id);
+
 }
 
 

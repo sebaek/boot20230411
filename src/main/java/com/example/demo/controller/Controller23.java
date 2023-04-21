@@ -26,6 +26,16 @@ public class Controller23 {
 		System.out.println(cnt + "개 행 삭제됨");
 	}
 	
+	// /sub23/link3?key=7
+	@RequestMapping("link3")
+	// 메소드 만들기
+	// 7번 고객 삭제 하기
+	public void method3(Integer key) {
+		int cnt = mapper.sql3(key);
+		System.out.println(cnt + "개 삭제됨");
+	}
+	
+	
 }
 
 
