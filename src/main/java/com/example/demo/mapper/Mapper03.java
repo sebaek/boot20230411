@@ -48,7 +48,20 @@ public interface Mapper03 {
 	int sql5(Dto09 dto9, Dto10 dto10);
 	
 	
-	
+	// dto1.prop1 -> col1
+	// dto2.age -> col2
+	// dto1.prop2 -> col3
+	// dto2.name -> col4
+	// dto1.prop3 -> col5
+	// dto2.score -> col6
+	// ?부분 코드 수정
+	// 이 메소드를 controller22.method9에서 호출
+	@Insert("""
+			INSERT INTO MyTable38 (Col1, Col2, Col3, Col4, Col5, Col6)
+			VALUES (?, ?, ?, ?, ?, ?)
+			""")
+	int sql6(Dto09 dto1, Dto10 dto2);
+
 	
 	
 	
