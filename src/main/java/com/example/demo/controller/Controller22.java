@@ -107,11 +107,18 @@ public class Controller22 {
 		System.out.println(cnt + "개 행 입력완료");
 	}
 	
-	// /sub22/link10?prop1=7&prop2=lunch&prop3=3.14&age=8&name=song&score=3.14e
+	// /sub22/link10?prop1=7&prop2=lunch&prop3=3.14&age=8&name=song&score=3.14
 	@RequestMapping("link10")
 	public void method10(Dto09 p1, Dto10 p2) {
 		int cnt = mapper.sql6(p1, p2);
 		System.out.println(cnt + "행 입력!");
+	}
+	
+	// /sub22/link11?prop2=mybatis&prop3=321
+	@RequestMapping("link11")
+	public void mehtod11(Dto11 dto) {
+		int cnt = mapper.sql7(dto);
+		System.out.println(cnt + "행 입력 완료!!");
 	}
 }
 

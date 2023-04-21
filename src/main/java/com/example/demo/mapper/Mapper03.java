@@ -70,7 +70,11 @@ public interface Mapper03 {
 	int sql6(Dto09 dto1, Dto10 dto2);
 
 	
-	
+	@Insert("""
+			INSERT INTO MyTable39 (Col2, Col3)
+			VALUES (#{prop2}, #{prop3})
+			""")
+	int sql7(Dto11 dto);
 	
 	
 }
