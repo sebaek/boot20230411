@@ -128,9 +128,15 @@ public class Controller22 {
 	
 	
 	// /sub22/link12?age=40&name=son&score=9.9
-	// 요청시 MyTable40에 데이터 추가되도록 코드
+	// 요청시 MyTable40에 데이터 추가되도록 코드 작성
 	// 컨트롤러메소드, 매퍼 메소드, 자바빈
 	// *자바빈의 id 프로퍼티에 자동증가컬럼값 받을 수 있게
+	@RequestMapping("link12")
+	public void method12(Dto12 dto) {
+		int cnt = mapper.sql8(dto);
+		System.out.println(cnt + "개 행 입력");
+		System.out.println(dto.getId() + "번 데이터 입력됨");
+	}
 }
 
 

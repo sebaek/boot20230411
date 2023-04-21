@@ -76,6 +76,13 @@ public interface Mapper03 {
 			""")
 	@Options(useGeneratedKeys = true, keyProperty = "prop1")
 	int sql7(Dto11 dto);
+
+	@Insert("""
+			INSERT INTO MyTable40 (age, name, score)
+			VALUES (#{age}, #{name}, #{score})
+			""")
+	@Options(useGeneratedKeys = true, keyProperty = "id")
+	int sql8(Dto12 dto);
 	
 	
 }
