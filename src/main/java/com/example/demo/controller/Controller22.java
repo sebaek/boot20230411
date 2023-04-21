@@ -59,6 +59,22 @@ public class Controller22 {
 		int cnt = mapper.sql4(dto);
 		System.out.println(cnt + "행 입력됨");
 	}
+	
+	// /sub22/link6?age=77&name=park&score=88.88
+	@RequestMapping("link6")
+	public void method6(@ModelAttribute Dto10 dto) {
+		int cnt = mapper.sql4(dto);
+		System.out.println(cnt + "개 행 입력됨");
+	}
+	
+	
+	// MyTable36에 데이터 추가될 수 있게
+	// 아래 코드 수정하기
+	@RequestMapping("link7")
+	public void method7() {
+		int cnt = mapper.sql3(dto);
+		System.out.println(cnt + "개 행 입력됨");
+	}
 }
 
 
