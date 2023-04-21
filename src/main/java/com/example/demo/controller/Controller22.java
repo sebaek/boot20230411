@@ -106,6 +106,13 @@ public class Controller22 {
 		int cnt = mapper.sql6(o1, o2);
 		System.out.println(cnt + "개 행 입력완료");
 	}
+	
+	// /sub22/link10?prop1=7&prop2=lunch&prop3=3.14&age=8&name=song&score=3.14e
+	@RequestMapping("link10")
+	public void method10(Dto09 p1, Dto10 p2) {
+		int cnt = mapper.sql6(p1, p2);
+		System.out.println(cnt + "행 입력!");
+	}
 }
 
 
