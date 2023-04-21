@@ -74,6 +74,7 @@ public interface Mapper03 {
 			INSERT INTO MyTable39 (Col2, Col3)
 			VALUES (#{prop2}, #{prop3})
 			""")
+	@Options(useGeneratedKeys = true, keyProperty = "prop1")
 	int sql7(Dto11 dto);
 	
 	

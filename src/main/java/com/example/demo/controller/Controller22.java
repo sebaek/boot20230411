@@ -116,9 +116,14 @@ public class Controller22 {
 	
 	// /sub22/link11?prop2=mybatis&prop3=321
 	@RequestMapping("link11")
-	public void mehtod11(Dto11 dto) {
+	@ResponseBody
+	public String mehtod11(Dto11 dto) {
+		System.out.println("prop1:" + dto.getProp1());
 		int cnt = mapper.sql7(dto);
 		System.out.println(cnt + "행 입력 완료!!");
+		System.out.println("prop1:" + dto.getProp1());
+		
+		return dto.getProp1() + "번째 데이터 입력완료";
 	}
 }
 
