@@ -2,6 +2,8 @@ package com.example.demo.mapper;
 
 import org.apache.ibatis.annotations.*;
 
+import com.example.demo.domain.*;
+
 @Mapper
 public interface Mapper05 {
 
@@ -22,6 +24,30 @@ public interface Mapper05 {
 				Col1 = #{key}
 			""")
 	int sql2(Integer key, String val1, Integer val2);
+
+	@Update("""
+			UPDATE Customers
+			SET 
+				CustomerName = #{name},
+				Country = #{country}
+			WHERE
+				CustomerId = #{id}
+			""")
+	int sql3(int id, String name, String country);
+	
+	@Update("""
+			UPDATE Customers
+			SET
+				CustomerName = #{name},
+				ContactName = #{contactName},
+				Address = #{address},
+				City = #{city},
+				PostalCode = #{postalCode},
+				Country = #{country}
+			WHERE 
+				CustomerId = #{id}
+			""")
+	int sql4(Customer customer);
 }
 
 
