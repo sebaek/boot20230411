@@ -57,8 +57,15 @@ public interface Mapper03 {
 	// ?부분 코드 수정
 	// 이 메소드를 controller22.method9에서 호출
 	@Insert("""
-			INSERT INTO MyTable38 (Col1, Col2, Col3, Col4, Col5, Col6)
-			VALUES (?, ?, ?, ?, ?, ?)
+			INSERT INTO MyTable38 
+				(Col1, Col2, Col3, Col4, Col5, Col6)
+			VALUES 
+				(#{dto1.prop1}, 
+				#{dto2.age}, 
+				#{dto1.prop2}, 
+				#{dto2.name}, 
+				#{dto1.prop3}, 
+				#{dto2.score})
 			""")
 	int sql6(Dto09 dto1, Dto10 dto2);
 

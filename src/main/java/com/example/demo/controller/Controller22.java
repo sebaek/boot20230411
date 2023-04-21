@@ -89,6 +89,23 @@ public class Controller22 {
 		int cnt = mapper.sql5(dto1, dto2);
 		System.out.println(cnt + "개 행 추가됨");
 	}
+	
+	@RequestMapping("link9")
+	public void method9() {
+		Dto09 o1 = new Dto09();
+		Dto10 o2 = new Dto10();
+		
+		o1.setProp1(12345);
+		o1.setProp2("점심시간");
+		o1.setProp3(88.77);
+		
+		o2.setAge(54321);
+		o2.setName("돈까스");
+		o2.setScore(77.88);
+		
+		int cnt = mapper.sql6(o1, o2);
+		System.out.println(cnt + "개 행 입력완료");
+	}
 }
 
 
