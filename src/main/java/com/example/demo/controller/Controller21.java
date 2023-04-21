@@ -59,6 +59,20 @@ public class Controller21 {
 	public void method4() {
 		mapper.sql4().forEach(System.out::println);
 	}
+	
+	// /sub21/link5?cid=3
+	@RequestMapping("link5")
+	public void method5(@RequestParam("cid") Integer cid) {
+		List<String> names = mapper.sql5(cid);
+		names.forEach(System.out::println);
+	}
+	
+	// /sub21/link6?country=uk
+	// /sub21/link6?country=canada
+	// 각 국가에 있는 고객명(customerName)이 콘솔에 출력
+	// 1)컨트롤러메소드
+	// 2)매퍼메소드
+	
 }
 
 
