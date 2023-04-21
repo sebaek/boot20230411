@@ -70,8 +70,9 @@ public class Controller22 {
 	
 	// MyTable36에 데이터 추가될 수 있게
 	// 아래 코드 수정하기
+	// /sub22/link7?prop1=33&prop2=world&prop3=33.44
 	@RequestMapping("link7")
-	public void method7() {
+	public void method7(Dto09 dto) {
 		int cnt = mapper.sql3(dto);
 		System.out.println(cnt + "개 행 입력됨");
 	}
