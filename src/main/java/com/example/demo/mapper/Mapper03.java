@@ -41,6 +41,11 @@ public interface Mapper03 {
 	int sql4(Dto10 dto);
 	
 	
+	@Insert("""
+			INSERT INTO MyTable37 (Age, Name, Score)
+			VALUES (#{dto9.prop1}, #{dto10.name}, #{dto9.prop3})
+			""")
+	int sql5(Dto09 dto9, Dto10 dto10);
 	
 	
 	
