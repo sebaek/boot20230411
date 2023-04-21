@@ -78,7 +78,10 @@ public class Controller21 {
 		names.forEach(System.out::println);
 	}
 	
-	
+	@RequestMapping("link7")
+	public void method7(@RequestParam Integer cid) {
+		mapper.sql7(cid).forEach(System.out::println);
+	}
 }
 
 

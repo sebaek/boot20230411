@@ -55,7 +55,7 @@ public interface Mapper02 {
 			""")
 	// 메소드 작성
 	// 작성된 메소드를 controller21.method7에서 호출
-	
+	List<Dto08> sql7(Integer cid);
 }
 
 
