@@ -63,6 +63,8 @@ public class Controller24 {
 		Customer customer = mapper.sql5(id);
 		model.addAttribute("customer", customer);
 	}
+	
+	// 직원 조회 및 수정 코드 작성
 }
 
 
