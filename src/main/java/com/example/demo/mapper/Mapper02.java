@@ -11,6 +11,9 @@ public interface Mapper02 {
 			SELECT CustomerName FROM Customers
 			""")
 	List<String> sql1();
+	
+	// 모든 직원의 LastName 조회
+	
 }
 
 

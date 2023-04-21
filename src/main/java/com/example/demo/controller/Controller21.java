@@ -34,6 +34,10 @@ public class Controller21 {
 //		System.out.println(list);
 		list.forEach(System.out::println);
 	}
+	
+	// 경로 : /sub21/link2
+	// 모든 직원의 lastName 출력
+	
 }
 
 
