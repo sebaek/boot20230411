@@ -2,8 +2,10 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
 import com.example.demo.mapper.*;
 
 @Controller
@@ -33,6 +35,34 @@ public class Controller24 {
 		System.out.println(cnt + "개 행 변경됨");
 	}
 	
+	@RequestMapping("link4")
+	public void method4() {
+		
+		Customer customer = new Customer();
+		customer.setId(9);
+		customer.setCity("서울");
+		customer.setCountry("대한민국");
+		customer.setAddress("신촌");
+		customer.setContactName("강백호");
+		customer.setName("서태웅");
+		customer.setPostalCode("333333");
+		
+		int cnt = mapper.sql4(customer);
+		System.out.println(cnt + "개 행 수정됨");
+	}
+	
+	@RequestMapping("link5")
+	public void method(Customer customer) {
+		int cnt = mapper.sql4(customer);
+		System.out.println(cnt + "개 행 수정됨");
+	}
+	
+	// /sub24/link6?id=9
+	@RequestMapping("link6")
+	public void method(Integer id, Model model) {
+		Customer customer = mapper.sql5(id);
+		model.addAttribute("customer", customer);
+	}
 }
 
 

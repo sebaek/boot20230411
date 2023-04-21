@@ -48,6 +48,20 @@ public interface Mapper05 {
 				CustomerId = #{id}
 			""")
 	int sql4(Customer customer);
+
+	@Select("""
+			SELECT 
+				CustomerId id,
+				CustomerName name,
+				ContactName,
+				Address,
+				City,
+				Country,
+				PostalCode
+			FROM Customers
+			WHERE CustomerId = #{id}
+			""")
+	Customer sql5(Integer id);
 }
 
 
