@@ -25,6 +25,18 @@ public class Controller22 {
 	}
 	
 	
+	@RequestMapping("link2")
+	public void method2() {
+		System.out.println(mapper.sql2(7.987, "hello mybatis"));
+		System.out.println(mapper.sql2(392742.283, "hi weekend"));
+	}
+	
+	// /sub22/link3?val1=234.223&val2=송태섭
+	@RequestMapping("link3")
+	public void method3(Double val1, String val2) {
+		System.out.println(mapper.sql2(val1, val2));
+	}
+	
 }
 
 
