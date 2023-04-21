@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
 import com.example.demo.mapper.*;
 
 @Controller
@@ -42,7 +43,25 @@ public class Controller21 {
 		List<String> names = mapper.sql2();
 		names.forEach(System.out::println);
 	}
+	
+	@RequestMapping("link3")
+	public void method3() {
+		List<Dto07> names = mapper.sql3();
+		names.forEach(System.out::println);
+	}
+	
+	// 모든 상품의 이름,가격을 
+	// 조회해서 콘솔에 출력
 }
+
+
+
+
+
+
+
+
+
 
 
 

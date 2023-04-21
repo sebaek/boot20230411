@@ -4,6 +4,8 @@ import java.util.*;
 
 import org.apache.ibatis.annotations.*;
 
+import com.example.demo.domain.*;
+
 @Mapper
 public interface Mapper02 {
 
@@ -18,7 +20,11 @@ public interface Mapper02 {
 			""")
 	List<String> sql2();
 	
-	
+	@Select("""
+			SELECT LastName, FirstName
+			FROM Employees
+			""")
+	List<Dto07> sql3();
 }
 
 
