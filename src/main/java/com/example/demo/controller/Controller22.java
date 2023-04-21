@@ -49,6 +49,16 @@ public class Controller22 {
 		System.out.println(cnt);
 	}
 	
+	@RequestMapping("link5")
+	public void method5() {
+		Dto10 dto = new Dto10();
+		dto.setAge(333);
+		dto.setName("spring");
+		dto.setScore(99.99);
+		
+		int cnt = mapper.sql4(dto);
+		System.out.println(cnt + "행 입력됨");
+	}
 }
 
 

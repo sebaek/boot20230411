@@ -36,7 +36,7 @@ public interface Mapper03 {
 	// 3)mapper03.sql4 메소드를 controller22.method5에서 호출
 	@Insert("""
 			INSERT INTO MyTable37 (Age, Name, Score)
-			VALUES (#{age}, #{name}, #{score}
+			VALUES (#{age}, #{name}, #{score})
 			""")
 	int sql4(Dto10 dto);
 	
