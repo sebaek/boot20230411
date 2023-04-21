@@ -39,6 +39,23 @@ public interface Mapper02 {
 			WHERE CategoryId = #{cid}
 			""")
 	List<String> sql5(Integer cid);
+
+	@Select("""
+			SELECT CustomerName
+			FROM Customers
+			WHERE Country = #{country}
+			""")
+	List<String> sql6(String country);
+	
+	
+	@Select("""
+			SELECT ProductName, Price
+			FROM Products
+			WHERE CategoryId = #{cid}
+			""")
+	// 메소드 작성
+	// 작성된 메소드를 controller21.method7에서 호출
+	
 }
 
 

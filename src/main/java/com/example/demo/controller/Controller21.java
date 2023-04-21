@@ -72,6 +72,12 @@ public class Controller21 {
 	// 각 국가에 있는 고객명(customerName)이 콘솔에 출력
 	// 1)컨트롤러메소드
 	// 2)매퍼메소드
+	@RequestMapping("link6")
+	public void method6(String country) {
+		List<String> names = mapper.sql6(country);
+		names.forEach(System.out::println);
+	}
+	
 	
 }
 
