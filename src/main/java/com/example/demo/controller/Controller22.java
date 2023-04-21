@@ -125,6 +125,12 @@ public class Controller22 {
 		
 		return dto.getProp1() + "번째 데이터 입력완료";
 	}
+	
+	
+	// /sub22/link12?age=40&name=son&score=9.9
+	// 요청시 MyTable40에 데이터 추가되도록 코드
+	// 컨트롤러메소드, 매퍼 메소드, 자바빈
+	// *자바빈의 id 프로퍼티에 자동증가컬럼값 받을 수 있게
 }
 
 
