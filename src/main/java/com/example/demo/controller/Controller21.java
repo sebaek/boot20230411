@@ -37,7 +37,11 @@ public class Controller21 {
 	
 	// 경로 : /sub21/link2
 	// 모든 직원의 lastName 출력
-	
+	@RequestMapping("link2")
+	public void method2() {
+		List<String> names = mapper.sql2();
+		names.forEach(System.out::println);
+	}
 }
 
 
