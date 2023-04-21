@@ -19,6 +19,13 @@ public class Controller23 {
 		System.out.println(cnt + "개 행 삭제됨");
 	}
 	
+	// /sub23/link2?id=3
+	@RequestMapping("link2")
+	public void method2(Integer id) {
+		int cnt = mapper.sql2(id);
+		System.out.println(cnt + "개 행 삭제됨");
+	}
+	
 }
 
 
