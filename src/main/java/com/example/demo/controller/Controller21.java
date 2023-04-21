@@ -55,6 +55,10 @@ public class Controller21 {
 	// 1)컨트롤러메소드
 	// 2)매퍼 메소드
 	// 3)Dto08 자바빈
+	@RequestMapping("link4")
+	public void method4() {
+		mapper.sql4().forEach(System.out::println);
+	}
 }
 
 

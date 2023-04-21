@@ -25,6 +25,12 @@ public interface Mapper02 {
 			FROM Employees
 			""")
 	List<Dto07> sql3();
+
+	@Select("""
+			SELECT ProductName, Price
+			FROM Products
+			""")
+	List<Dto08> sql4();
 }
 
 
