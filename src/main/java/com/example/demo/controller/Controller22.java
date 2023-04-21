@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
 import com.example.demo.mapper.*;
 
 @Controller
@@ -35,6 +36,17 @@ public class Controller22 {
 	@RequestMapping("link3")
 	public void method3(Double val1, String val2) {
 		System.out.println(mapper.sql2(val1, val2));
+	}
+	
+	@RequestMapping("link4")
+	public void method4() {
+		Dto09 dto = new Dto09();
+		dto.setProp1(300);
+		dto.setProp2("hello mybatis");
+		dto.setProp3(33.33);
+		
+		int cnt = mapper.sql3(dto);
+		System.out.println(cnt);
 	}
 	
 }
