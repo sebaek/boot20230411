@@ -23,4 +23,10 @@ WHERE p.ProductID = 1;
 -- 예제)  1996-07-04에 주문한 상품명 조회
 SELECT * FROM Orders;
 SELECT * FROM OrderDetails;
+SELECT p.ProductName 
+FROM 
+Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+         JOIN Products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate = '1996-07-04';
+
 
