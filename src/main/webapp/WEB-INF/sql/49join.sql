@@ -29,4 +29,17 @@ Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
          JOIN Products p ON od.ProductID = p.ProductID
 WHERE o.OrderDate = '1996-07-04';
 
+-- '1996-07-04'의 매출 조회
+DESC Orders;
+DESC OrderDetails;
+DESC Products;
+SELECT SUM(od.Quantity * p.Price) 매출
+FROM OrderDetails od JOIN Products p ON od.ProductID = p.ProductID
+                     JOIN Orders o ON od.OrderID = o.OrderID
+WHERE o.OrderDate = '1996-07-04';
+
+-- 일별 매출 조회 (날짜 순으로 결과 조회)
+
+
+
 
