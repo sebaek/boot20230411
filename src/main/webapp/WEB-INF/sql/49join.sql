@@ -63,7 +63,21 @@ GROUP BY e.EmployeeID
 ORDER BY 매출 DESC;
 
 -- 상품별 판매금액
+SELECT p.ProductID, p.ProductName, SUM(od.Quantity * p.Price) 판매금액 
+FROM 
+	Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+             JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY p.ProductID
+ORDER BY 판매금액 DESC;
+
 -- 고객별 소비금액
+SELECT c.CustomerID, c.CustomerName, SUM(p.Price * od.Quantity) 구매금액 
+FROM
+	Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+		     JOIN Customers c ON o.CustomerID = c.CustomerID
+             JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY c.CustomerID
+ORDER BY 구매금액 DESC;
 
 
 
