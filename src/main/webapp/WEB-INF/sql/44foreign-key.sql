@@ -51,6 +51,15 @@ VALUES (1, '010-7777-7777');
 SELECT * FROM Student;
 SELECT * FROM StudentPhone;
 
+DELETE FROM Student
+WHERE ID = 2; -- fail
+-- > 외래키 제약사항이 있는 테이블의 데이터를 먼저 지워야 함
+DELETE FROM StudentPhone
+WHERE StudentId = 2;
+DELETE FROM Student
+WHERE Id = 2;
+SELECT * FROM Student;
+
 
 
 
