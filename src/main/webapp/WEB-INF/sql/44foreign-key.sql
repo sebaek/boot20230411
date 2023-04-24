@@ -59,6 +59,7 @@ WHERE StudentId = 2;
 DELETE FROM Student
 WHERE Id = 2;
 SELECT * FROM Student;
+SELECT * FROM StudentPhone WHERE StudentId = 1;
 
 
 
