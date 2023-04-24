@@ -5,7 +5,7 @@ CREATE TABLE Student (
 );
 CREATE TABLE StudentPhone (
 	Id INT PRIMARY KEY AUTO_INCREMENT,
-	StudentId INT,
+	StudentId INT NOT NULL,
 	Phone VARCHAR(50),
     -- foreign key (외래키 참조키)
     FOREIGN KEY (StudentId) REFERENCES Student(Id)
@@ -13,6 +13,50 @@ CREATE TABLE StudentPhone (
 
 DESC Student;
 DESC StudentPhone;
+
+CREATE TABLE StudentPhone(
+	StudentId INT,
+    Phone VARCHAR(50),
+    PRIMARY KEY (StudentId, Phone)
+);
+
+-- 데이터 입력
+INSERT INTO Student (Name) VALUES ('손흥민');
+INSERT INTO Student (Name) VALUES ('박지성');
+
+SELECT * FROM Student;
+
+INSERT INTO StudentPhone (StudentId, Phone)
+VALUES (1, '010-9999-8888');
+INSERT INTO StudentPhone (StudentId, Phone)
+VALUES (2, '010-8888-9999');
+SELECT * FROM StudentPhone;
+
+INSERT INTO StudentPhone (StudentId, Phone)
+VALUES (3, '010-7777-7777'); -- fail
+INSERT INTO StudentPhone (StudentId, Phone)
+VALUES (NULL, '010-5555-5555'); -- ok
+INSERT INTO StudentPhone (StudentId, Phone)
+VALUES (NULL, '010-3333-3333'); -- ok
+SELECT * FROM StudentPhone;
+
+DELETE FROM StudentPhone
+WHERE StudentId IS NULL;
+ALTER TABLE StudentPhone
+MODIFY COLUMN StudentId INT NOT NULL;
+
+INSERT INTO StudentPhone (StudentId, Phone)
+VALUES (1, '010-7777-7777');
+
+SELECT * FROM Student;
+SELECT * FROM StudentPhone;
+
+
+
+
+
+
+
 
 
 
