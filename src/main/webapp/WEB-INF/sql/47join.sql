@@ -43,3 +43,4 @@ ON a.Num1 = b.Num2; -- RIGHT (OUTER) JOIN
 
 
 
+
