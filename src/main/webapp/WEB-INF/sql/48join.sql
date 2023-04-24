@@ -13,6 +13,7 @@ SELECT e.LastName, e.FirstName FROM Orders o RIGHT JOIN Employees e
 ON o.EmployeeID = e.EmployeeID
 WHERE o.OrderId IS NULL;
 
+SELECT * FROM Orders;
 
 
 
