@@ -21,5 +21,28 @@ SELECT ProductName, CategoryName
 FROM Products JOIN Categories
 ON Products.CategoryId = Categories.CategoryId;
 
+-- 
+SELECT * FROM Products;
+SELECT * FROM Suppliers;
+-- 상품명, 그 상품을 공급하는 공급자명
+SELECT ProductName, SupplierName
+FROM Products JOIN Suppliers
+ON Products.SupplierID = Suppliers.SupplierID
+ORDER BY 2 ;
+
+-- ALIAS 사용으로 코드 줄이기
+SELECT CustomerName AS Name FROM Customers;
+
+SELECT ProductName, SupplierName
+FROM Products AS p JOIN Suppliers AS s
+ON p.SupplierID = s.SupplierID;
+SELECT ProductName, SupplierName
+FROM Products p JOIN Suppliers s
+ON p.SupplierID = s.SupplierID;
+
+SELECT p.SupplierID, s.SupplierID FROM Products p JOIN Suppliers s
+ON p.SupplierID = s.SupplierID;
+
+
 
 
