@@ -26,13 +26,24 @@ CREATE TABLE StudentPhone (
 );
 
 -- 예제 ) 교재 정보를 저장할 테이블 작성
-
+-- 제목, 저자, 출판사, 가격
+CREATE TABLE Book (
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+	Title VARCHAR(100),
+    Writer VARCHAR(100),
+    Publisher VARCHAR(200),
+    Price INT
+);
 
 
 
 
 
 -- 2NF (second normal form) 두번째 정규화
+-- 책 369쪽
+-- 규칙1) 1NF여야 한다.
+-- 규칙2) 부분적 함수 의존이 없다.
+
 -- 3NF (third normal form)세번째 정규화
 
 
