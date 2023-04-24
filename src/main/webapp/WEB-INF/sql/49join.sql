@@ -39,6 +39,32 @@ FROM OrderDetails od JOIN Products p ON od.ProductID = p.ProductID
 WHERE o.OrderDate = '1996-07-04';
 
 -- 일별 매출 조회 (날짜 순으로 결과 조회)
+SELECT o.OrderDate, SUM(od.Quantity * p.Price) 매출
+FROM OrderDetails od JOIN Products p ON od.ProductID = p.ProductID
+                     JOIN Orders o ON od.OrderID = o.OrderID
+GROUP BY o.OrderDate
+ORDER BY o.OrderDate ASC;
+
+-- 직원별 처리금액
+SELECT * FROM Orders;
+SELECT * FROM OrderDetails;
+SELECT * FROM Products;
+SELECT * FROM Employees;
+SELECT
+ e.EmployeeID,
+ e.LastName,
+ e.FirstName,
+ SUM(p.Price * od.Quantity) 매출 
+FROM Orders o JOIN Employees e ON o.EmployeeID = e.EmployeeID
+              JOIN OrderDetails od ON o.OrderID = od.OrderID
+              JOIN Products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate BETWEEN '1997-01-01' AND '1997-01-31'
+GROUP BY e.EmployeeID
+ORDER BY 매출 DESC;
+
+-- 상품별 판매금액
+-- 고객별 소비금액
+
 
 
 
