@@ -20,4 +20,7 @@ FROM Products p JOIN Categories c ON p.CategoryID = c.CategoryID
                 JOIN Suppliers s ON p.SupplierID = s.SupplierID
 WHERE p.ProductID = 1;
            
+-- 예제)  1996-07-04에 주문한 상품명 조회
+SELECT * FROM Orders;
+SELECT * FROM OrderDetails;
 
