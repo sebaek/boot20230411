@@ -25,6 +25,8 @@ CREATE TABLE StudentPhone (
 	Phone VARCHAR(50)
 );
 
+-- 예제 ) 교재 정보를 저장할 테이블 작성
+
 
 
 
