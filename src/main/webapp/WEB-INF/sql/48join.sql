@@ -5,5 +5,5 @@ SELECT * FROM Orders o RIGHT JOIN Customers c
 ON o.CustomerID = c.CustomerID; -- 832
 SELECT * FROM Orders o RIGHT JOIN Customers c
 ON o.CustomerID = c.CustomerID
-WHERE o.OrderId IS NULL; -- 주문한적없는 고객
+WHERE o.OrderId IS NULL; -- 주문한적 없는 고객
 
