@@ -34,6 +34,16 @@ DESC Shippers;
 DESC Suppliers;
 
 
+SELECT * FROM Products 
+WHERE ProductID = 1;
+SELECT * FROM Categories
+WHERE CategoryId = 1;
+
+SELECT * FROM 
+Products JOIN Categories ON
+Products.CategoryId = Categories.CategoryId
+WHERE Products.ProductId = 1;
+
 
 
 
