@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.*;
+
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
@@ -82,7 +84,10 @@ public class Controller25 {
 	}
 	
 	@GetMapping("link12")
-	public String method12() {
+	public String method12(RedirectAttributes rttr) {
+		
+		rttr.addFlashAttribute("list", List.of("강백호", "서태웅"));
+		
 		return "redirect:link13";
 	}
 	
