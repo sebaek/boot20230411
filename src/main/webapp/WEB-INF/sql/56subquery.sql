@@ -17,6 +17,15 @@ GROUP BY c.CustomerID
 ORDER BY 구매금액 DESC) t1;
 
 -- (직원별 매출액)의 평균
+SELECT AVG(매출) average
+FROM
+(SELECT
+ e.EmployeeID,
+ SUM(p.Price * od.Quantity) 매출 
+FROM Orders o JOIN Employees e ON o.EmployeeID = e.EmployeeID
+              JOIN OrderDetails od ON o.OrderID = od.OrderID
+              JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY e.EmployeeID) T1;
 
 -- 카테고리별 평균상품가격 조회 (평균상품가격이 30.00 달러 이상인 것만)
 SELECT CategoryID, AVG(Price)
