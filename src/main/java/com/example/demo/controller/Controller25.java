@@ -81,6 +81,16 @@ public class Controller25 {
 		return "redirect:link10";
 	}
 	
+	@GetMapping("link12")
+	public String method12() {
+		return "redirect:link13";
+	}
+	
+	@GetMapping("link13")
+	public void method13() {
+		
+	}
+	
 }
 
 
