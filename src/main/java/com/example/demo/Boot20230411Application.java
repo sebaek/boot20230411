@@ -4,6 +4,7 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.*;
 
+import com.example.demo.component.*;
 import com.example.demo.domain.*;
 
 @SpringBootApplication
@@ -21,6 +22,17 @@ public class Boot20230411Application {
 		
 		System.out.println(System.identityHashCode(o2));
 		System.out.println(System.identityHashCode(o3));
+		
+		Object o4 = context.getBean("bean2");
+		Object o5 = context.getBean("bean3");
+		
+		System.out.println(o4);
+		System.out.println(o5);
+		
+		ComponentA c1 = (ComponentA) o4;
+		System.out.println(c1.getComp());
+		ComponentC c3 = (ComponentC) context.getBean("bean4");
+		System.out.println(c3.getCom());
 	}
 
 	// 우리가 객체를 직접 만들 때
