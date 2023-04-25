@@ -16,4 +16,9 @@ FROM
 GROUP BY c.CustomerID
 ORDER BY 구매금액 DESC) t1;
 
+-- (직원별 매출액)의 평균
+
+
+
+
 
