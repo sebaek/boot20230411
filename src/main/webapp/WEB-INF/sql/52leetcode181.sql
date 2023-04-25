@@ -13,6 +13,7 @@ INSERT INTO Employee VALUEs (4, 'Max', 90000, NULL);
 
 SELECT * FROM Employee;
 -- 문제 ) 매니저보다 많은 연봉받는 직원 이름 조회
-
+SELECT * FROM 
+Employee e1 JOIN Employee e2;
 
 
