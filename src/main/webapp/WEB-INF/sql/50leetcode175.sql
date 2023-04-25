@@ -27,7 +27,18 @@ SELECT p.firstName, p.lastName, a.city, a.state FROM
 Person p LEFT JOIN Address a ON p.personId = a.personId;
 
 -- 서브쿼리로 풀어보기
-
+USE leetcode175;
+SELECT * FROM Person;
+SELECT * FROM Address;
+SELECT firstName,
+	   lastName,
+       (SELECT city 
+       FROM Address 
+       WHERE personId = p.personId) city,
+       (SELECT state 
+       FROM Address 
+       WHERE personId = p.personId) state
+FROM Person p;
 
 
 
