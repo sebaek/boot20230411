@@ -17,4 +17,5 @@ CREATE TABLE Orders (
 INSERT INTO Orders VALUES (1, 3);
 INSERT INTO Orders VALUEs (2, 1);
 
+-- 문제 ) 한번도 주문하지 않은 고객 조회
 
