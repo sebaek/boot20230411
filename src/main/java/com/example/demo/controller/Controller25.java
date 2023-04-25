@@ -96,6 +96,31 @@ public class Controller25 {
 		
 	}
 	
+	@GetMapping("link14")
+	public String method14(RedirectAttributes rttr) {
+		// 목적지의 Model Attribute로
+//		rttr.addFlashAttribute(null, rttr); 
+		
+		// 쿼리스트링으로 붙어서
+		rttr.addAttribute("address", "seoul");
+		
+		return "redirect:link15";
+	}
+	
+	// /sub25/link15 요청 보내면
+	@GetMapping("link15")
+	public String method15() {
+		
+		return "redirect:link16";
+	}
+	
+	@GetMapping("link16")
+	public void method16(@RequestParam("email") String email,
+			@RequestParam("location") String location) {
+		System.out.println("email:" + email);
+		System.out.println("location:" + location);
+	}
+	
 }
 
 
