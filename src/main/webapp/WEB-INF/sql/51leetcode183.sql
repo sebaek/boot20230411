@@ -18,4 +18,11 @@ INSERT INTO Orders VALUES (1, 3);
 INSERT INTO Orders VALUEs (2, 1);
 
 -- 문제 ) 한번도 주문하지 않은 고객 조회
+SELECT c.name Customers FROM 
+Customers c LEFT JOIN Orders o ON c.id = o.customerId
+WHERE o.id IS NULL;
+
+
+
+
 
