@@ -33,6 +33,11 @@ public class Boot20230411Application {
 		System.out.println(c1.getComp());
 		ComponentC c3 = (ComponentC) context.getBean("bean4");
 		System.out.println(c3.getCom());
+		
+		Object c4 = context.getBean("componentD");
+		System.out.println(c4);
+		ComponentE c5 = (ComponentE) context.getBean("componentE");
+		System.out.println(c5.getComp());
 	}
 
 	// 우리가 객체를 직접 만들 때
