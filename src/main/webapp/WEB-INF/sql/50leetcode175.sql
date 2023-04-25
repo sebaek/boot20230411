@@ -26,6 +26,7 @@ INSERT INTO Address VALUES (2, 3, 'Leetcode', 'California');
 SELECT p.firstName, p.lastName, a.city, a.state FROM 
 Person p LEFT JOIN Address a ON p.personId = a.personId;
 
+-- 서브쿼리로 풀어보기
 
 
 
