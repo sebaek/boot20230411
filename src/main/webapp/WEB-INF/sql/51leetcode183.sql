@@ -32,7 +32,8 @@ SELECT * FROM Customers WHERE id NOT IN (1, 3);
 SELECT name FROM Customers 
 WHERE id NOT IN (SELECT customerId FROM Orders);
 
-
+-- w3schools 데이터베이스에서
+-- 서브쿼리 사용해서 주문한적 없는 고객들 조회
 
 
 
