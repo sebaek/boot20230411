@@ -109,7 +109,9 @@ public class Controller25 {
 	
 	// /sub25/link15 요청 보내면
 	@GetMapping("link15")
-	public String method15() {
+	public String method15(RedirectAttributes rttr) {
+		rttr.addAttribute("email", "abc@gmail.com");
+		rttr.addAttribute("location", "seoul");
 		
 		return "redirect:link16";
 	}
