@@ -24,6 +24,11 @@ SELECT Country FROM Suppliers
 WHERE SupplierId = 2; -- USA
 SELECT CustomerName FROM Customers
 WHERE Country = 'USA';
+SELECT CustomerName FROM Customers
+WHERE Country = (SELECT Country FROM Suppliers WHERE SupplierID = 2);
+
+-- 문제 ) 평균가격보다 높은 가격의 상품들 조회
+SELECT * FROM Products;
 
 
 
