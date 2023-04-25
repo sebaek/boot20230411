@@ -23,6 +23,14 @@ Customers c LEFT JOIN Orders o ON c.id = o.customerId
 WHERE o.id IS NULL;
 
 -- 서브쿼리로 풀어보기
+USE leetcode183;
+SELECT * FROM Customers;
+SELECT * FROM Orders;
+
+SELECT customerId FROM Orders;
+SELECT * FROM Customers WHERE id NOT IN (1, 3);
+SELECT name FROM Customers 
+WHERE id NOT IN (SELECT customerId FROM Orders);
 
 
 
