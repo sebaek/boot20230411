@@ -31,6 +31,13 @@ FROM Products
 GROUP BY CategoryID) T1
 WHERE average >= 30.00;
 
+SELECT T1.CategoryID, c.CategoryName, T1.average
+FROM
+(SELECT CategoryID, AVG(Price) average
+FROM Products
+GROUP BY CategoryID) T1 JOIN Categories c ON T1.CategoryId = c.CategoryId
+WHERE average >= 30.00;
+
 
 
 
