@@ -29,6 +29,10 @@ WHERE Country = (SELECT Country FROM Suppliers WHERE SupplierID = 2);
 
 -- 문제 ) 평균가격보다 높은 가격의 상품들 조회
 SELECT * FROM Products;
+SELECT AVG(Price) FROM Products; -- 28.866364;
+SELECT * FROM Products WHERE Price > 28.866364;
+SELECT * FROM Products
+WHERE Price > (SELECT AVG(Price) FROM Products);
 
 
 
