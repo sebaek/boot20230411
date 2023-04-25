@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.*;
 
 @Controller
 @RequestMapping("sub25")
@@ -45,6 +47,38 @@ public class Controller25 {
 	public void method6(@PathVariable("var1") String id,
 			@PathVariable("var2") String name) {
 		System.out.println(id + ", " + name);
+	}
+	
+	@GetMapping("link7")
+	public String method7() {
+		
+		return "hello"; // /WEB-INF/views/hello.jsp 
+	}
+	
+	// redirect
+	@GetMapping("link8")
+	public String method8() {
+		return "redirect:/sub25/link7";
+	}
+	
+	@GetMapping("link9")
+	public String method9(Model model) {
+		
+		model.addAttribute("attr1", "value1");
+		
+		return "redirect:link10";
+	}
+	
+	@GetMapping("link10")
+	public void method10() {
+		
+	}
+	
+	@GetMapping("link11")
+	public String method11(RedirectAttributes rttr) {
+		rttr.addFlashAttribute("attr1", "redirect attribute!!");
+		
+		return "redirect:link10";
 	}
 	
 }
