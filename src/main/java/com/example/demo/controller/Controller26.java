@@ -24,11 +24,18 @@ public class Controller26 {
 	public String method1(@RequestParam(value = "page", defaultValue = "1") Integer page, Model model) {
 		System.out.println(page);
 
+		// 쿼리에서 사용하는 시작 인덱스
 		Integer startIndex = (page - 1) * 20;
+		
+		// 페이지네이션 가장 왼쪽번호, 오른쪽번호 구하기
+		Integer leftPageNumber = (page - 1) / 10 * 10 + 1;
+		Integer rightPageNumber = leftPageNumber + 9;
 
 		List<Customer> list = mapper.listCustomer(startIndex);
 
 		model.addAttribute("customerList", list);
+		model.addAttribute("leftPageNumber", leftPageNumber);
+		model.addAttribute("rightPageNumber", rightPageNumber);
 
 		return "/sub13/link1";
 	}
