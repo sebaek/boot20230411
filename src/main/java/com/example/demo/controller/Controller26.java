@@ -50,6 +50,7 @@ public class Controller26 {
 		model.addAttribute("prevPageNumber", prevPageNumber);
 		model.addAttribute("nextPageNumber", nextPageNumber);
 		model.addAttribute("lastPageNumber", lastPageNumber);
+		model.addAttribute("currentPageNumber", page);
 
 		return "/sub13/link1";
 	}

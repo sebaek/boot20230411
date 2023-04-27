@@ -31,7 +31,7 @@
 						<c:param name="page" value="${pageNumber }"></c:param>
 					</c:url>
 					<li class="page-item">
-						<a href="${pageLink }" class="page-link">${pageNumber }</a>
+						<a href="${pageLink }" class="page-link ${pageNumber eq currentPageNumber ? 'active' : '' }">${pageNumber }</a>
 					</li>
 				</c:forEach>
 				
