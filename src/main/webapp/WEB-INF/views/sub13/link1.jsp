@@ -16,6 +16,13 @@
 		<nav aria-label="Page navigation example">
 			<ul class="pagination">
 			
+				<li class="page-item">
+					<c:url value="/sub26/link1" var="pageLink">
+						<c:param name="page" value="${prevPageNumber }"></c:param>
+					</c:url>
+					<a href="${pageLink }" class="page-link">이전</a>
+				</li>
+			
 				<c:forEach begin="${leftPageNumber }" end="${rightPageNumber }" var="pageNumber">
 					<!-- li.page-item>a.page-link -->
 					<c:url value="/sub26/link1" var="pageLink">
@@ -25,7 +32,13 @@
 						<a href="${pageLink }" class="page-link">${pageNumber }</a>
 					</li>
 				</c:forEach>
-
+				
+				<li class="page-item">
+					<c:url value="/sub26/link1" var="pageLink">
+						<c:param name="page" value="${nextPageNumber }"></c:param>
+					</c:url>
+					<a href="${pageLink }" class="page-link">다음</a>
+				</li>
 			</ul>
 		</nav>
 	</div>

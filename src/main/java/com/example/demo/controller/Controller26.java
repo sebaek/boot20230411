@@ -30,12 +30,18 @@ public class Controller26 {
 		// 페이지네이션 가장 왼쪽번호, 오른쪽번호 구하기
 		Integer leftPageNumber = (page - 1) / 10 * 10 + 1;
 		Integer rightPageNumber = leftPageNumber + 9;
+		
+		// 이전, 다음 버튼 페이지 번호 구하기
+		Integer prevPageNumber = leftPageNumber - 10;
+		Integer nextPageNumber = rightPageNumber + 1;
 
 		List<Customer> list = mapper.listCustomer(startIndex);
 
 		model.addAttribute("customerList", list);
 		model.addAttribute("leftPageNumber", leftPageNumber);
 		model.addAttribute("rightPageNumber", rightPageNumber);
+		model.addAttribute("prevPageNumber", prevPageNumber);
+		model.addAttribute("nextPageNumber", nextPageNumber);
 
 		return "/sub13/link1";
 	}
