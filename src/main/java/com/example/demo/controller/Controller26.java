@@ -38,6 +38,9 @@ public class Controller26 {
 		// 마지막 페이지 구하기
 		Integer numOfRecord = mapper.countAll();
 		Integer lastPageNumber = (numOfRecord - 1) / 20 + 1;
+		
+		// 오른쪽 페이지 번호가 마지막 페이지 번호보다 클 수 없음
+		rightPageNumber = Math.min(rightPageNumber, lastPageNumber);
 
 		List<Customer> list = mapper.listCustomer(startIndex);
 
