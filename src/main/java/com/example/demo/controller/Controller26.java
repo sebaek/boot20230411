@@ -34,6 +34,10 @@ public class Controller26 {
 		// 이전, 다음 버튼 페이지 번호 구하기
 		Integer prevPageNumber = leftPageNumber - 10;
 		Integer nextPageNumber = rightPageNumber + 1;
+		
+		// 마지막 페이지 구하기
+		Integer numOfRecord = mapper.countAll();
+		Integer lastPageNumber = (numOfRecord - 1) / 20 + 1;
 
 		List<Customer> list = mapper.listCustomer(startIndex);
 
@@ -42,6 +46,7 @@ public class Controller26 {
 		model.addAttribute("rightPageNumber", rightPageNumber);
 		model.addAttribute("prevPageNumber", prevPageNumber);
 		model.addAttribute("nextPageNumber", nextPageNumber);
+		model.addAttribute("lastPageNumber", lastPageNumber);
 
 		return "/sub13/link1";
 	}

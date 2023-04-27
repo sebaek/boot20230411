@@ -21,6 +21,11 @@ public interface Mapper06 {
 			""")
 	List<Customer> listCustomer(Integer startIndex);
 
+	@Select("""
+			SELECT COUNT(*) FROM Customers
+			""")
+	Integer countAll();
+
 	
 }
 

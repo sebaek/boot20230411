@@ -35,12 +35,14 @@
 					</li>
 				</c:forEach>
 				
-				<li class="page-item">
-					<c:url value="/sub26/link1" var="pageLink">
-						<c:param name="page" value="${nextPageNumber }"></c:param>
-					</c:url>
-					<a href="${pageLink }" class="page-link">다음</a>
-				</li>
+				<c:if test="${nextPageNumber le lastPageNumber }">
+					<li class="page-item">
+						<c:url value="/sub26/link1" var="pageLink">
+							<c:param name="page" value="${nextPageNumber }"></c:param>
+						</c:url>
+						<a href="${pageLink }" class="page-link">다음</a>
+					</li>
+				</c:if>
 			</ul>
 		</nav>
 	</div>
