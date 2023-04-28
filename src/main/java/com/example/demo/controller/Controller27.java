@@ -37,4 +37,24 @@ public class Controller27 {
 
 		return "/sub13/link2"; // 직원 lastName, firstName
 	}
+	
+	@GetMapping("link3")
+	public void method3() {
+		mapper.sql3();
+	}
+	
+	@GetMapping("link4")
+	public void method4() {
+		mapper.sql4("eve");
+	}
+	
+	@GetMapping("link5")
+	public void method5() {
+		mapper.sql4(null);
+	}
 }
+
+
+
+
+

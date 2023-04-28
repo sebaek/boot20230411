@@ -12,8 +12,8 @@ public interface Mapper07 {
 	@Select("""
 			<script>
 			<bind name="pattern" value="'%' + keyword + '%'" />
-			
-			SELECT 
+
+			SELECT
 				customerId id,
 				customerName name,
 				contactName,
@@ -30,7 +30,7 @@ public interface Mapper07 {
 	@Select("""
 			<script>
 			<bind name="p" value="'%' + s + '%'" />
-			
+
 			SELECT
 				EmployeeId id,
 				FirstName,
@@ -44,7 +44,36 @@ public interface Mapper07 {
 			</script>
 			""")
 	List<Employee> sql2(String s);
+
+	@Select("""
+			<script>
+			SELECT COUNT(*)
+			FROM Customers
+			
+			<if test="false">
+			WHERE CustomerID = 10
+			</if>
+			</script>
+			""")
+	Integer sql3();
+
+	
+	@Select("""
+			<script>
+			
+			SELECT COUNT(*)
+			FROM Customers
+			
+			<if test="keyword != null">
+				<bind name="pattern" value="'%' + keyword + '%'" />
+				WHERE CustomerName LIKE #{pattern}
+			</if> 
+			
+			</script>
+			""")
+	Integer sql4(String keyword);
 }
+
 
 
 
