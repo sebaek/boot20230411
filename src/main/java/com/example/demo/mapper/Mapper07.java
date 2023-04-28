@@ -72,6 +72,18 @@ public interface Mapper07 {
 			</script>
 			""")
 	Integer sql4(String keyword);
+
+	@Select("""
+			<script>
+			SELECT AVG(Price)
+			FROM Products
+			
+			<if test="cid neq 0">
+				WHERE CategoryId = #{cid}
+			</if>
+			</script>
+			""")
+	Double sql5(int cid);
 }
 
 
