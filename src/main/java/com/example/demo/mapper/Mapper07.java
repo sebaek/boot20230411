@@ -64,7 +64,7 @@ public interface Mapper07 {
 			SELECT COUNT(*)
 			FROM Customers
 			
-			<if test="keyword != null">
+			<if test="keyword neq null">
 				<bind name="pattern" value="'%' + keyword + '%'" />
 				WHERE CustomerName LIKE #{pattern}
 			</if> 

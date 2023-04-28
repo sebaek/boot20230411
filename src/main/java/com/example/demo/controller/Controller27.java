@@ -52,6 +52,17 @@ public class Controller27 {
 	public void method5() {
 		mapper.sql4(null);
 	}
+	
+	@GetMapping("link6")
+	public void mehtod6() {
+		// 3번 카테고리 상품의 평균 가격
+		Double avg = mapper.sql5(3);
+	}
+	
+	@GetMapping("link7") {
+		// 모든 상품의 평균 가격
+		Double avg = mapper.sql5(0);
+	}
 }
 
 
