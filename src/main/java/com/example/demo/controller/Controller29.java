@@ -13,37 +13,42 @@ public class Controller29 {
 	public void method1() {
 		// /sub29/link1.jsp
 	}
-	
-	// 
+
+	//
 	@PostMapping("link2")
 	public void method2(@RequestParam("myfile") MultipartFile file) {
 		System.out.println(file.getOriginalFilename());
 		System.out.println(file.getSize());
 	}
-	
+
 	@GetMapping("link3")
 	public void method3() {
 		// 파일 Input이 있는 form을 포함한 뷰(link3.jsp)로 포워드
 	}
-	
+
 	@PostMapping("link4")
-	public void metho4(@RequestParam("files") MultipartFile file) {
-		System.out.println(file.getOriginalFilename());
-		System.out.println(file.getSize());
+	public void metho4(@RequestParam("files") MultipartFile[] file) {
+		for (MultipartFile f : file) {
+			System.out.println(f.getOriginalFilename());
+			System.out.println(f.getSize());
+		}
 	}
 	
+	@GetMapping("link5")
+	public void method5() {
+		
+	}
 	
+	@PostMapping("link6")
+	public void method6(@RequestParam("files") MultipartFile[] files) {
+		for (MultipartFile file : files) {
+			System.out.println(file.getOriginalFilename());
+			System.out.println(file.getSize());
+		}
+		
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
