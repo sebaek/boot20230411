@@ -4,6 +4,8 @@ import java.util.*;
 
 import org.apache.ibatis.annotations.*;
 
+import com.example.demo.domain.*;
+
 @Mapper
 public interface Mapper09 {
 
@@ -21,6 +23,28 @@ public interface Mapper09 {
 			</script>
 			""")
 	Integer sql1(List<String> elems);
+
+	@Select("""
+			<script>
+			SELECT
+				SupplierId id,
+				SupplierName name,
+				ContactName,
+				Address,
+				Country,
+				PostalCode,
+				Phone
+			FROM Suppliers
+			WHERE Country IN (
+			
+				<foreach collection="countryList" item="country" separator=",">
+					#{country}
+				</foreach>
+			
+			)
+			</script>
+			""")
+	List<Supplier> sql2(List<String> countryList);
 }
 
 

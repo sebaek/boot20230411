@@ -24,10 +24,15 @@ public class Controller28 {
 	@GetMapping("link2")
 	public void method2() {
 		List<Supplier> list1 = mapper.sql2(List.of("UK", "USA", "Japan"));
-		list1.forEach(System.out::print);
+		list1.forEach(System.out::println);
 		
 		List<Supplier> list2 = mapper.sql2(List.of("Brazil", "Germany"));
-		list2.forEach(System.out::print);
+		list2.forEach(System.out::println);
+	}
+	
+	@GetMapping("link3")
+	public void method3() {
+		// sub28/link3.jsp 포워드
 	}
 }
 
