@@ -17,9 +17,30 @@ public class Controller29 {
 	// 
 	@PostMapping("link2")
 	public void method2(@RequestParam("myfile") MultipartFile file) {
-		
+		System.out.println(file.getOriginalFilename());
+		System.out.println(file.getSize());
 	}
+	
+	@GetMapping("link3")
+	public void method3() {
+		// 파일 Input이 있는 form을 포함한 뷰(link3.jsp)로 포워드
+	}
+	
+	@PostMapping("link4")
+	public void metho4(@RequestParam("files") MultipartFile file) {
+		System.out.println(file.getOriginalFilename());
+		System.out.println(file.getSize());
+	}
+	
+	
 }
+
+
+
+
+
+
+
 
 
 
