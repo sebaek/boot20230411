@@ -35,13 +35,15 @@ public interface Mapper09 {
 				PostalCode,
 				Phone
 			FROM Suppliers
-			WHERE Country IN (
-			
-				<foreach collection="countryList" item="country" separator=",">
-					#{country}
-				</foreach>
-			
-			)
+			<where>
+				<if test="countryList neq null">
+				Country IN (
+					<foreach collection="countryList" item="country" separator=",">
+						#{country}
+					</foreach>
+				)
+				</if>
+			</where>
 			</script>
 			""")
 	List<Supplier> sql2(List<String> countryList);
