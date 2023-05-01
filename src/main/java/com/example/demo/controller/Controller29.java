@@ -4,6 +4,8 @@ import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.*;
 
+import lombok.*;
+
 @Controller
 @RequestMapping("sub29")
 public class Controller29 {
@@ -46,6 +48,34 @@ public class Controller29 {
 			System.out.println(file.getSize());
 		}
 		
+	}
+	
+	@GetMapping("link7")
+	public void method7() {
+		
+	}
+	
+	@Data
+	static class Sub29Dto {
+		private String name;
+		private Integer age;
+	}
+	
+	@PostMapping("link8")
+	public void method8(
+			Sub29Dto dto,
+			String name, 
+			Integer age, 
+			@RequestParam("files") MultipartFile[] files) {
+		System.out.println(dto);
+		
+		System.out.println(name);
+		System.out.println(age);
+		
+		for (MultipartFile file : files) {
+			System.out.println(file.getOriginalFilename());
+			System.out.println(file.getSize());
+		}
 	}
 
 }
