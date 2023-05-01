@@ -34,7 +34,15 @@ public class Controller28 {
 	public void method3() {
 		// sub28/link3.jsp 포워드
 	}
+	
+	@GetMapping("link4")
+	public void method4(@RequestParam("country") List<String> country) {
+		System.out.println(country);
+		mapper.sql2(country).forEach(System.out::println);
+	}
 }
+
+
 
 
 
