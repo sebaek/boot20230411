@@ -36,7 +36,7 @@ public class Controller28 {
 	}
 	
 	@GetMapping("link4")
-	public void method4(@RequestParam("country") List<String> country) {
+	public void method4(@RequestParam(value = "country", required = false) List<String> country) {
 		System.out.println(country);
 		mapper.sql2(country).forEach(System.out::println);
 	}
