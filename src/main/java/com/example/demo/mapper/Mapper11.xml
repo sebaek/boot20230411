@@ -12,6 +12,16 @@
 			<result column="productName"/>
 		</collection>
 	</resultMap>
+	
+	<resultMap type="com.example.demo.domain.Category" id="categoryResultMap">
+		<id column="CategoryId" property="id"></id>
+		<result column="CategoryName" property="name"></result>
+		<result column="Description" property="description"></result>
+		<collection property="products" ofType="com.example.demo.domain.Product">
+			<result column="ProductName" property="name"></result>
+			<result column="Price" property="price"></result>
+		</collection>
+	</resultMap>
 </mapper>
 
 
