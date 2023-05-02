@@ -36,6 +36,26 @@ public interface Mapper11 {
 			""")
 	@ResultMap("categoryResultMap")
 	Category sql2(int id);
+
+
+	@Select("""
+			SELECT 
+				s.SupplierID,
+				s.SupplierName,
+				s.ContactName,
+				s.Address,
+				s.City,
+				s.PostalCode,
+				s.Country,
+				s.Phone,
+				p.ProductName,
+				p.Price
+			FROM Suppliers s JOIN Products p
+			  ON s.SupplierId = p.SupplierId
+			WHERE s.SupplierId = #{id}
+			""")
+	@ResultMap("supplierResultMap")
+	Supplier sql3(int id);
 }
 
 
