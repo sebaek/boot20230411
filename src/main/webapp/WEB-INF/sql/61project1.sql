@@ -17,3 +17,19 @@ SELECT * FROM Board b LEFT JOIN FileName f
 ON b.id = f.boardId
 WHERE b.id = 4119; -- file 없는 게시물
 SELECT * FROM Board WHERE id = 4119;
+
+USE Board;
+SELECT *,
+	   COUNT(f.id) fileCount
+FROM Board b LEFT JOIN FileName f ON b.id = f.boardId
+GROUP BY b.id
+ORDER BY b.id DESC
+LIMIT 0, 5;
+
+4124
+4122
+4121
+4120
+4119
+
+
