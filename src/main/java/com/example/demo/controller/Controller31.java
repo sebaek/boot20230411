@@ -31,6 +31,14 @@ public class Controller31 {
 			System.out.println(category);
 			category.getProducts().forEach(System.out::println);
 		}
+		
+		@GetMapping("link3")
+		public void method(int id) {
+			Supplier supplier = mapper.sql3(id);
+			
+			System.out.println(supplier);
+			supplier.getProducts().forEach(System.out::println);
+		}
 }
 
 
