@@ -9,4 +9,6 @@ CREATE TABLE FileName (
     FOREIGN KEY (boardId) REFERENCES Board(id)
 );
 
+SELECT * FROM FileName;
+
 
