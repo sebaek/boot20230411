@@ -44,4 +44,28 @@ public class Controller30 {
 		// B고객의 돈 500원 증가
 		mapper.plusB();
 	}
+	
+	@GetMapping("link4")
+	@Transactional
+	public void method4() throws Exception {
+		// A고객의 돈 500원 차감
+		mapper.minusA();
+
+		Class.forName("java.lang.String2"); // checked exception
+
+		// B고객의 돈 500원 증가
+		mapper.plusB();
+	}
+	
+	@GetMapping("link5")
+	@Transactional(rollbackFor = Exception.class)
+	public void method5() throws Exception {
+		// A고객의 돈 500원 차감
+		mapper.minusA();
+
+		Class.forName("java.lang.String2"); // checked exception
+
+		// B고객의 돈 500원 증가
+		mapper.plusB();
+	}
 }
