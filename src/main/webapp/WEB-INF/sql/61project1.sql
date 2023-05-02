@@ -1,0 +1,12 @@
+USE Board;
+
+DESC Board;
+
+CREATE TABLE FileName (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	boardId INT NOT NULL,
+	fileName VARCHAR(300) NOT NULL,
+    FOREIGN KEY (boardId) REFERENCES Board(id)
+);
+
+
