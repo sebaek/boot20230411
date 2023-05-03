@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.io.*;
-
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +7,6 @@ import org.springframework.web.multipart.*;
 
 import jakarta.annotation.*;
 import software.amazon.awssdk.auth.credentials.*;
-import software.amazon.awssdk.awscore.exception.*;
-import software.amazon.awssdk.core.exception.*;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.*;
 import software.amazon.awssdk.services.s3.*;
@@ -97,6 +93,18 @@ public class Controller32 {
 				s3.putObject(por, RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
 			}
 		}
+	}
+	
+	@PostMapping("link5")
+	public void method(String fileName) {
+		String key = "test/" + fileName;
+		
+		DeleteObjectRequest dor = DeleteObjectRequest.builder()
+				.key(key)
+				.bucket(bucketName)
+				.build();
+		
+		s3.deleteObject(dor);
 	}
 }
 
