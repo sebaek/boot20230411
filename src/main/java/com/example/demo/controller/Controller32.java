@@ -1,11 +1,16 @@
 package com.example.demo.controller;
 
+import java.io.*;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.*;
 
 import jakarta.annotation.*;
 import software.amazon.awssdk.auth.credentials.*;
+import software.amazon.awssdk.awscore.exception.*;
+import software.amazon.awssdk.core.exception.*;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.*;
 import software.amazon.awssdk.services.s3.*;
@@ -69,4 +74,42 @@ public class Controller32 {
 
 		s3.deleteObject(deleteObjectRequest);
 	}
+	
+	@GetMapping("link3")
+	public void method3() {
+		// 파일 업로드 가능한 폼있는 뷰로 포워드
+		
+	}
+	
+	@PostMapping("link4")
+	public void method4(@RequestParam("files") MultipartFile[] files) throws Exception {
+		// aws s3 업로드
+		for (MultipartFile file : files) {
+			
+			if (file.getSize() > 0) {
+				String key = "test/" + file.getOriginalFilename();
+				PutObjectRequest por = PutObjectRequest.builder()
+						.key(key)
+						.acl(ObjectCannedACL.PUBLIC_READ)
+						.bucket(bucketName)
+						.build();
+				
+				s3.putObject(por, RequestBody.fromInputStream(file.getInputStream(), file.getSize()));
+			}
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
