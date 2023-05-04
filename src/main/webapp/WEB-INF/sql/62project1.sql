@@ -7,3 +7,5 @@ CREATE TABLE Member (
     email VARCHAR(100) UNIQUE,
     inserted DATETIME DEFAULT NOW()
 );
+
+SELECT * FROM Member;
