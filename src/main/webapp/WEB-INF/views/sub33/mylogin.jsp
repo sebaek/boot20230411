@@ -18,8 +18,6 @@
 		암호 <input type="password" name="pw" /> <br />
 		<input type="submit" value="로그인" />
 		
-		<sec:csrfInput/>
-		
 	</form>
 	
 	
