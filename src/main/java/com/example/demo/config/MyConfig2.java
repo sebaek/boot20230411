@@ -12,7 +12,9 @@ public class MyConfig2 {
 			throws Exception {
 		http.formLogin()
 			.loginPage("/sub33/mylogin")
-			.defaultSuccessUrl("/list", true);
+			.defaultSuccessUrl("/list", true)
+			.usernameParameter("id")
+			.passwordParameter("pw");
 		
 		http.authorizeHttpRequests().requestMatchers("/abc").authenticated();
 		http.authorizeHttpRequests().anyRequest().permitAll();

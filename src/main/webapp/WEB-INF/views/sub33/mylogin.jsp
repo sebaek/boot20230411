@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +14,12 @@
 	<h1>내가 만든 로그인 폼</h1>
 	
 	<form method="post">
-		아이디 <input type="text" name="" /> <br />
-		암호 <input type="password" name="" /> <br />
+		아이디 <input type="text" name="id" /> <br />
+		암호 <input type="password" name="pw" /> <br />
 		<input type="submit" value="로그인" />
-	
+		
+		<sec:csrfInput/>
+		
 	</form>
 	
 	
