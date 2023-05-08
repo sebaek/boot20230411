@@ -10,6 +10,11 @@ public class MyConfig2 {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) 
 			throws Exception {
+		http.formLogin()
+			.loginPage("/sub33/mylogin")
+			.defaultSuccessUrl("/list", true);
+		
+		http.authorizeHttpRequests().requestMatchers("/abc").authenticated();
 		
 		return http.build();
 	}
