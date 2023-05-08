@@ -14,8 +14,6 @@ public class MyConfig2 {
 			.loginPage("/sub33/mylogin")
 			.defaultSuccessUrl("/list", true);
 		
-		http.logout();
-		
 		http.authorizeHttpRequests().requestMatchers("/abc").authenticated();
 		http.authorizeHttpRequests().anyRequest().permitAll();
 		
