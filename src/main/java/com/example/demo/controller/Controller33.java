@@ -11,4 +11,15 @@ public class Controller33 {
 	public void loginForm() {
 		
 	}
+	
+	@GetMapping("loginSuccess")
+	public void loginSucess() {
+		
+	}
 }
+
+
+
+
+
+
