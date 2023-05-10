@@ -13,8 +13,11 @@ public class Controller34 {
 	}
 
 	@GetMapping("link1")
-	public void method1() {
+	@ResponseBody
+	public String method1() {
+		System.out.println("헬로 ajax");
 		
+		return "첫번째 응답 데이터";
 	}
 }
 
