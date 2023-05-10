@@ -31,4 +31,10 @@ VALUES ('admin0', 'admin');
 
 DESC Member;
 
+SELECT *
+FROM Member m LEFT JOIN MemberAuthority ma ON m.id = ma.memberId
+WHERE m.id = 'user6';
+
+
+
 
