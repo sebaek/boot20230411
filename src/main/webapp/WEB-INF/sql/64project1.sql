@@ -1,2 +1,13 @@
 USE Board;
 SELECT * FROM Board;
+SELECT * FROM Member;
+
+UPDATE Board
+SET writer = '111';
+
+ALTER TABLE Board
+ADD FOREIGN KEY (writer) REFERENCES Member(id);
+
+
+SELECT * FROM Board ORDER BY 1 DESC;
+SELECT * FROM FileName ORDER BY 1 DESC;
