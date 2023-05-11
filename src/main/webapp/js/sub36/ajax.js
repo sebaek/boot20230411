@@ -70,6 +70,23 @@ $("#btn5").click(function() {
 	});
 })
 
+$("#btn6").click(function() {
+	const data = {
+		city: "jeju",
+		price: 1000,
+		etc: {
+			name: "lee",
+			email: "lee@gmail.com",
+			score: 3.33,
+			married: true
+		}
+	}
+	$.ajax("/sub36/link6", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	})
+})
 
 
 
