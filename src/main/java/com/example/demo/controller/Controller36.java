@@ -62,6 +62,18 @@ public class Controller36 {
 	public void method4(@RequestBody Dto4 dto) {
 		System.out.println(dto.getPhone().get(2)); // 값 출력
 	}
+	
+	@Data
+	static class Dto5 {
+		private String title;
+		private String publisher;
+//		private Map<String, Object> writer;
+		private Dto1 writer;
+	}
+	@PostMapping("link5")
+	public void method5(@RequestBody Dto5 dto) {
+		System.out.println(dto);
+	}
 }
 
 

@@ -53,7 +53,22 @@ $("#btn4").click(function() {
 })
 
 
-
+$("#btn5").click(function() {
+	const data = {
+		title : "java",
+		publisher : "한빛",
+		writer : {
+			name : "정대만",
+			age: 44
+		}
+	}
+	
+	$.ajax("/sub36/link5", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+})
 
 
 
