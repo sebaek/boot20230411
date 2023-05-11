@@ -74,6 +74,17 @@ public class Controller36 {
 	public void method5(@RequestBody Dto5 dto) {
 		System.out.println(dto);
 	}
+	
+	@Data
+	static class Dto6 {
+		private String city;
+		private Integer price;
+		private Dto2 etc;
+	}
+	@PostMapping("link6")
+	public void method6(@RequestBody Dto6 dto) {
+		System.out.println(dto);
+	}
 }
 
 
