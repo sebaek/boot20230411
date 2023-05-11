@@ -129,7 +129,17 @@ $("#btn8").click(function() {
 });
 
 $("#btn9").click(function() {
-	const data = {};
+	const name = $("#inputName2").val();
+	const email = $("#inputEmail2").val();
+	const score = $("#inputScore2").val();
+	const married = $("#inputMarried2").val();
+	
+	const data = {
+		name: name,
+		email: email,
+		score: score,
+		married: married
+	};
 	$.ajax("/sub36/link2", {
 		method:"post",
 		contentType: "application/json",
