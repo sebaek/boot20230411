@@ -75,6 +75,13 @@ public class Controller35 {
 		System.out.println(data.get("address")); // 값 출력
 		System.out.println(data.get("name"));
 	}
+	
+	@PostMapping("link9")
+	public void method9(@RequestBody Map data) {
+		System.out.println(data.get("age"));
+		System.out.println(data.get("name"));
+		System.out.println(data.get("married"));
+	}
 }
 
 
