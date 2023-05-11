@@ -14,6 +14,18 @@ $("#button4").click(function() {
 	$.ajax("/sub34/link4?address=서울");
 })
 
+$("#button5").click(function() {
+	$.ajax("/sub34/link5?name=손&age=22");
+});
+
+
+
+
+
+
+
+
+
 
 
 

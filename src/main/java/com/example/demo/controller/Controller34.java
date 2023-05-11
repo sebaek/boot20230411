@@ -36,6 +36,19 @@ public class Controller34 {
 		System.out.println("link4 메소드 일함");
 		System.out.println("address:" + address);
 	}
+	
+	// /sub34/link5?name=손&age=22
+	@GetMapping("link5")
+	public void method5(String name, Integer age) {
+		System.out.println("name:" + name);
+		System.out.println("age:" + age);
+	}
+	
+	@GetMapping("link6")
+	public void method6(String food, Double price) {
+		System.out.println("food:" + food);
+		System.out.println("price:" + price);
+	}
 }
 
 
