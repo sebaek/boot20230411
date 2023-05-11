@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.*;
+
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -58,9 +60,13 @@ public class Controller35 {
 		System.out.println(dto);
 	}
 	
+	// json 요청 데이터는
+	// @RequestBody Map이나
+	// @RequestBody JavaBean으로 받음
 	@PostMapping("link7")
-	public void method7() {
+	public void method7(@RequestBody Map map) {
 		System.out.println("메소드7 실행됨");
+		System.out.println(map);
 	}
 }
 
