@@ -87,7 +87,45 @@ public class Controller35 {
 		System.out.println(data.get("name").getClass().getSimpleName());
 		System.out.println(data.get("married").getClass().getSimpleName());
 	}
+	
+	@PostMapping("link10")
+	public void method10(@RequestBody Map<String, Object> map) {
+		System.out.println(map);
+	}
+	
+	@PostMapping("link11")
+	public void method11(@RequestBody Map<String, Object> map) {
+		System.out.println(map);
+		System.out.println(map.get("book"));
+		System.out.println(map.get("book").getClass().getSimpleName());
+		
+		Map<String, Object> book = (Map<String, Object>) map.get("book");
+		System.out.println(book.get("title"));
+		System.out.println(book.get("price"));
+	}
+	
+	@PostMapping("link12")
+	public void method12(@RequestBody Map<String, Object> map) {
+		System.out.println(map);
+		System.out.println(map.get("food").getClass().getSimpleName());
+		
+		ArrayList<Object> foods = (ArrayList<Object>) map.get("food");
+		System.out.println(foods.get(0));
+		System.out.println(foods.get(1));
+		System.out.println(foods.get(2));
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

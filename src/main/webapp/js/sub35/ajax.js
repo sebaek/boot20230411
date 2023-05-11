@@ -59,6 +59,44 @@ $("#button9").click(function() {
 	})
 });
 
+$("#button10").click(function() {
+	$.ajax("/sub35/link10", {
+		method: "post",
+		contentType: "application/json",
+		data: `{"address": null, "age": 30, "name": "손흥민"}`
+	})
+})
+
+$("#button11").click(function() {
+	$.ajax("/sub35/link11", {
+		method: "post",
+		contentType: "application/json",
+		data: `{"book": {"title": "java", "price": 300}, "address": "seoul"}`
+	})
+})
+
+$("#button12").click(function() {
+	$.ajax("/sub35/link12", {
+		method: "post",
+		contentType: "application/json",
+		data: `{"food":["pizza", "coke", "coffee"], "store": "피자스쿨"}`
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
