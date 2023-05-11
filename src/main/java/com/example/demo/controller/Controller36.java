@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.*;
+
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +38,16 @@ public class Controller36 {
 	
 	@PostMapping("link2")
 	public void method2(@RequestBody Dto2 dto) {
+		System.out.println(dto);
+	}
+	
+	@Data
+	static class Dto3 {
+		private String name;
+		private List<String> hobby;
+	}
+	@PostMapping("link3")
+	public void method3(@RequestBody Dto3 dto) {
 		System.out.println(dto);
 	}
 }

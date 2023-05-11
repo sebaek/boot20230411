@@ -24,6 +24,21 @@ $("#btn2").click(function() {
 	})
 })
 
+$("#btn3").click(function() {
+	const data = {
+		name: "태웅",
+		hobby: [
+			"독서",
+			"농구",
+			"음악감상"
+		]
+	};
+	$.ajax("/sub36/link3", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	})
+})
 
 
 
