@@ -21,6 +21,17 @@ public class Controller35 {
 	public void method2() {
 		System.out.println("메소드2 일함!!");
 	}
+	
+	// /sub35/link3
+	@PostMapping("link3")
+	public void method3(String name) {
+		System.out.println("name:" + name);
+	}
+	
+	@PostMapping("link4")
+	public void method4(String address) {
+		System.out.println("address:" + address);
+	}
 }
 
 
