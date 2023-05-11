@@ -47,6 +47,16 @@ public class Controller35 {
 		System.out.println(dto);
 		
 	}
+	@Data
+	static class Dto2 {
+		private String address;
+		private String product;
+		private Double price;
+	}
+	@PostMapping("link6")
+	public void method6(Dto2 dto) {
+		System.out.println(dto);
+	}
 }
 
 
