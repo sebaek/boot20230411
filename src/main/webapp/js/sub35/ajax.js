@@ -26,7 +26,12 @@ $("#button5").click(function() {
 	})
 })
 
-
+$("#button6").click(function() {
+	$.ajax("/sub35/link6", {
+		method: "post",
+		data: "address=부산&product=자동차&price=300.12"
+	})
+})
 
 
 
