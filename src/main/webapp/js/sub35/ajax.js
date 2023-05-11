@@ -83,7 +83,21 @@ $("#button12").click(function() {
 	})
 })
 
+$("#button13").click(function() {
+	$.ajax("/sub35/link13", {
+		method: "post",
+		contentType: "application/json",
+		data: `["pizza", "coke", "coffee"]`
+	})
+})
 
+$("#button14").click(function() {
+	$.ajax("/sub35/link14", {
+		method: "post",
+		contentType: "application/json",
+		data: `[{"name":"강백호", "pos":"파포"}, {"name":"서태웅", "pos":"스포"}]`
+	})
+})
 
 
 
