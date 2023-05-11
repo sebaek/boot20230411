@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import lombok.*;
+
 @Controller
 @RequestMapping("sub34")
 public class Controller34 {
@@ -48,6 +50,30 @@ public class Controller34 {
 	public void method6(String food, Double price) {
 		System.out.println("food:" + food);
 		System.out.println("price:" + price);
+	}
+	
+	@Data
+	static class Dto1 {
+		private String address;
+		private String name;
+		private Integer age;
+	}
+	
+	// /sub34/link7?address=seoul&name=park&age=33
+	@GetMapping("link7")
+	public void method7(@ModelAttribute Dto1 dto) {
+		System.out.println(dto);
+	}
+	
+	@Data
+	static class Dto2 {
+		private Double price;
+		private String product;
+		private String category;
+	}
+	@GetMapping("link8")
+	public void method8(Dto2 dto) {
+		System.out.println(dto);
 	}
 }
 

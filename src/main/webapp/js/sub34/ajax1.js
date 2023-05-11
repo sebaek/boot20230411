@@ -18,6 +18,18 @@ $("#button5").click(function() {
 	$.ajax("/sub34/link5?name=손&age=22");
 });
 
+$("#button6").click(function() {
+	$.ajax("/sub34/link6?food=pizza&price=3.14")
+});
+
+$("#button7").click(function() {
+	$.ajax("/sub34/link7?address=seoul&name=park&age=33");
+})
+
+
+
+
+
 
 
 
