@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import lombok.*;
+
 @Controller
 @RequestMapping("sub35")
 public class Controller35 {
@@ -29,8 +31,21 @@ public class Controller35 {
 	}
 	
 	@PostMapping("link4")
-	public void method4(String address) {
+	public void method4(String address, Double price) {
 		System.out.println("address:" + address);
+		System.out.println("price:" + price);
+	}
+	
+	@Data
+	static class Dto1 {
+		private String name;
+		private Double score;
+		private String email;
+	}
+	@PostMapping("link5")
+	public void method5(Dto1 dto) {
+		System.out.println(dto);
+		
 	}
 }
 

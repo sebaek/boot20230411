@@ -11,6 +11,23 @@ $("#button3").click(function() {
 	});
 })
 
+$("#button4").click(function() {
+	$.ajax("/sub35/link4", {
+		method: "post",
+		data: "address=서울&price=99.77"
+	});
+})
+
+
+$("#button5").click(function() {
+	$.ajax("/sub35/link5", {
+		method: "post",
+		data: "name=발&score=7.5&email=val@googl.com"
+	})
+})
+
+
+
 
 
 
