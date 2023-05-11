@@ -10,7 +10,9 @@ $("#button3").click(function() {
 	$.ajax("/sub34/link3?name=son");
 });
 
-
+$("#button4").click(function() {
+	$.ajax("/sub34/link4?address=서울");
+})
 
 
 
