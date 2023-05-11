@@ -40,6 +40,20 @@ $("#btn3").click(function() {
 	})
 })
 
+$("#btn4").click(function() {
+	const obj = {
+		phone: ["samsung", "apple", "motorola"]
+	}
+	$.ajax("/sub36/link4", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(obj)
+	})
+	
+})
+
+
+
 
 
 
