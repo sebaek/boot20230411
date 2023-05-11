@@ -57,6 +57,11 @@ public class Controller35 {
 	public void method6(Dto2 dto) {
 		System.out.println(dto);
 	}
+	
+	@PostMapping("link7")
+	public void method7() {
+		System.out.println("메소드7 실행됨");
+	}
 }
 
 

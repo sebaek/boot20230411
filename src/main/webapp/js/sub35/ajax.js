@@ -35,7 +35,13 @@ $("#button6").click(function() {
 
 
 
-
+$("#button7").click(function() {
+	$.ajax("/sub35/link7", {
+		method: "post",
+		data: '{"name": "son"}',
+		contentType: "application/json"
+	})
+})
 
 
 
