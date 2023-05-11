@@ -85,6 +85,12 @@ public class Controller36 {
 	public void method6(@RequestBody Dto6 dto) {
 		System.out.println(dto);
 	}
+	
+	
+	@PostMapping("link7")
+	public void method7(@RequestBody List<Dto1> dto) {
+		dto.forEach(System.out::println);
+	}
 }
 
 
