@@ -16,6 +16,11 @@ public class Controller35 {
 	public void method1() {
 		System.out.println("포스트 요청 잘 받음");
 	}
+	
+	@PostMapping("link2")
+	public void method2() {
+		System.out.println("메소드2 일함!!");
+	}
 }
 
 
