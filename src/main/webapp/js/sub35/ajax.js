@@ -65,7 +65,7 @@ $("#button9").click(function() {
 		name: "cha",
 		married: true
 	};
-	
+
 	$.ajax("/sub35/link9", {
 		method: "post",
 		contentType: "application/json",
@@ -75,7 +75,7 @@ $("#button9").click(function() {
 });
 
 $("#button10").click(function() {
-	
+
 	const obj = {
 		address: null,
 		age: 30,
@@ -99,32 +99,59 @@ $("#button11").click(function() {
 	$.ajax("/sub35/link11", {
 		method: "post",
 		contentType: "application/json",
-		data : JSON.stringify(data)
+		data: JSON.stringify(data)
 		//data: `{"book": {"title": "java", "price": 300}, "address": "seoul"}`
 	})
 })
 
 $("#button12").click(function() {
+	const data = {
+		food: [
+			"pizza",
+			"coke",
+			"coffee"
+		],
+		store: "피자스쿨"
+	};
+
 	$.ajax("/sub35/link12", {
 		method: "post",
 		contentType: "application/json",
-		data: `{"food":["pizza", "coke", "coffee"], "store": "피자스쿨"}`
+		data: JSON.stringify(data)
+		//data: `{"food":["pizza", "coke", "coffee"], "store": "피자스쿨"}`
 	})
 })
 
 $("#button13").click(function() {
+	const data = ["pizza", "coke", "coffee"];
 	$.ajax("/sub35/link13", {
 		method: "post",
 		contentType: "application/json",
-		data: `["pizza", "coke", "coffee"]`
+		data: JSON.stringify(data)
+		// data: `["pizza", "coke", "coffee"]`
 	})
 })
 
 $("#button14").click(function() {
+	const data = [
+		{
+			name: "강백호",
+			position: "파워포워드"
+		},
+		{
+			name: "서태웅",
+			position: "스몰포워드"
+		},
+		{
+			name: "송태섭",
+			position: "포인트가드"
+		}
+	]
 	$.ajax("/sub35/link14", {
 		method: "post",
 		contentType: "application/json",
-		data: `[{"name":"강백호", "pos":"파포"}, {"name":"서태웅", "pos":"스포"}]`
+		data: JSON.stringify(data)
+		//data: `[{"name":"강백호", "pos":"파포"}, {"name":"서태웅", "pos":"스포"}]`
 	})
 })
 
