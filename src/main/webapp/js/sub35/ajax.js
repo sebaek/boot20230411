@@ -36,42 +36,71 @@ $("#button6").click(function() {
 
 
 $("#button7").click(function() {
+	const obj = { name: "son" };
+
 	$.ajax("/sub35/link7", {
 		method: "post",
-		data: '{"name": "son"}',
+		// data: '{"name": "son"}',
+		data: JSON.stringify(obj),
 		contentType: "application/json"
 	})
 })
 
 $("#button8").click(function() {
+	const data = {
+		address: "seoul",
+		name: "박지성"
+	};
 	$.ajax("/sub35/link8", {
 		method: "post",
 		contentType: "application/json",
-		data: '{"address":"seoul", "name":"박지성"}'
+		data: JSON.stringify(data)
+		// data: '{"address":"seoul", "name":"박지성"}'
 	})
 })
 
 $("#button9").click(function() {
+	const obj = {
+		age: 33.5,
+		name: "cha",
+		married: true
+	};
+	
 	$.ajax("/sub35/link9", {
 		method: "post",
 		contentType: "application/json",
-		data: `{"age": 33.5, "name": "cha", "married": true}`
+		data: JSON.stringify(obj)
+		// data: `{"age": 33.5, "name": "cha", "married": true}`
 	})
 });
 
 $("#button10").click(function() {
+	
+	const obj = {
+		address: null,
+		age: 30,
+		name: "손흥민"
+	}
 	$.ajax("/sub35/link10", {
 		method: "post",
 		contentType: "application/json",
-		data: `{"address": null, "age": 30, "name": "손흥민"}`
+		data: JSON.stringify(obj)
 	})
 })
 
 $("#button11").click(function() {
+	const data = {
+		book: {
+			title: "java",
+			price: 300
+		},
+		address: "seoul"
+	}
 	$.ajax("/sub35/link11", {
 		method: "post",
 		contentType: "application/json",
-		data: `{"book": {"title": "java", "price": 300}, "address": "seoul"}`
+		data : JSON.stringify(data)
+		//data: `{"book": {"title": "java", "price": 300}, "address": "seoul"}`
 	})
 })
 
