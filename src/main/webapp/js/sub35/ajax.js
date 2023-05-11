@@ -43,6 +43,14 @@ $("#button7").click(function() {
 	})
 })
 
+$("#button8").click(function() {
+	$.ajax("/sub35/link8", {
+		method: "post",
+		contentType: "application/json",
+		data: '{"address":"seoul", "name":"박지성"}'
+	})
+})
+
 
 
 

@@ -67,6 +67,13 @@ public class Controller35 {
 	public void method7(@RequestBody Map map) {
 		System.out.println("메소드7 실행됨");
 		System.out.println(map);
+		System.out.println(map.get("name")); // son
+	}
+	
+	@PostMapping("link8")
+	public void mehtod8(@RequestBody Map data) {
+		System.out.println(data.get("address")); // 값 출력
+		System.out.println(data.get("name"));
 	}
 }
 
