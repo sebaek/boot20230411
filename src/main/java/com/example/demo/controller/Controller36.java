@@ -25,6 +25,19 @@ public class Controller36 {
 	public void method1(@RequestBody Dto1 map) {
 		System.out.println(map);
 	}
+	
+	@Data
+	static class Dto2 {
+		private String name;
+		private String email;
+		private Double score;
+		private Boolean married;
+	}
+	
+	@PostMapping("link2")
+	public void method2(@RequestBody Dto2 dto) {
+		System.out.println(dto);
+	}
 }
 
 

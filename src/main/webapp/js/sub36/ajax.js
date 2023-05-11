@@ -9,3 +9,31 @@ $("#btn1").click(function() {
 		data: JSON.stringify(obj)
 	})
 })
+
+$("#btn2").click(function() {
+	const data = {
+		name: "강백호",
+		email: "kang@gmail.com",
+		score: 99.99,
+		married: true
+	}
+	$.ajax("/sub36/link2", {
+		method: "post",
+		contentType:"application/json",
+		data: JSON.stringify(data)
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
