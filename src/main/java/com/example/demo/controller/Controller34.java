@@ -19,6 +19,11 @@ public class Controller34 {
 		
 		return "첫번째 응답 데이터";
 	}
+	
+	@GetMapping("link2")
+	public void method2() {
+		System.out.println("get 요청 link2");
+	}
 }
 
 
