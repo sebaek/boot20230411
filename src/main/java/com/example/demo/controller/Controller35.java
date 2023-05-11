@@ -76,11 +76,16 @@ public class Controller35 {
 		System.out.println(data.get("name"));
 	}
 	
+	// {"age": "33", "name": "cha", "married": "true"}
 	@PostMapping("link9")
 	public void method9(@RequestBody Map data) {
 		System.out.println(data.get("age"));
 		System.out.println(data.get("name"));
 		System.out.println(data.get("married"));
+		
+		System.out.println(data.get("age").getClass().getSimpleName());
+		System.out.println(data.get("name").getClass().getSimpleName());
+		System.out.println(data.get("married").getClass().getSimpleName());
 	}
 }
 

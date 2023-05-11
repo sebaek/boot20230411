@@ -51,7 +51,13 @@ $("#button8").click(function() {
 	})
 })
 
-
+$("#button9").click(function() {
+	$.ajax("/sub35/link9", {
+		method: "post",
+		contentType: "application/json",
+		data: `{"age": 33.5, "name": "cha", "married": true}`
+	})
+});
 
 
 
