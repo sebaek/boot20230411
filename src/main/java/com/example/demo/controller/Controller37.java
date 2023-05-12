@@ -47,6 +47,20 @@ public class Controller37 {
 		
 		return res;
 	}
+	
+	@GetMapping("link5")
+	public ResponseEntity<String> method5() {
+		
+		ResponseEntity<String> res = new ResponseEntity<>("hello response", HttpStatusCode.valueOf(200));
+		
+		return res;
+	}
+	
+	@GetMapping("link6")
+	public ResponseEntity<String> method6() {
+		
+		return ResponseEntity.ok("hello response 2222");
+	}
 }
 
 
