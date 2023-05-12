@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.time.*;
+import java.util.*;
 
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
@@ -107,6 +108,21 @@ public class Controller37 {
 		
 		return new ResponseEntity(data, header, 200);
 	}
+	
+	@GetMapping("link12")
+	@ResponseBody 
+	// + 리턴타입 : Map, JavaBean 이면 json string 변환
+	// AND Content-Type : application/json 로 셋팅
+	public Map method12() {
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("name", "박지성");
+		map.put("age", 44);
+		
+		return map;
+	}
+	
+	
 }
 
 
