@@ -95,7 +95,12 @@ $("#btn9").click(function() {
 
 $("#btn10").click(function() {
 	// 응답본문(현재시간) 이 콘솔에 출력
-	$.ajax("/sub39/link10"); 
+	$.ajax("/sub39/link10", {
+		success: function(data) {
+			// console.log(data);
+			$("#res10").text(data);
+		}
+	}); 
 })
 
 
