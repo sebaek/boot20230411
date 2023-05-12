@@ -71,6 +71,19 @@ $("#btn6").click(function() {
 		});
 })
 
+$("#btn7").click(function() {
+	$.ajax("/sub39/link3")
+		.done(function() {
+			console.log("성공!!!!! done")
+		})
+})
+$("#btn8").click(function() {
+	$.ajax("/sub39/link4")
+		.fail(function() {
+			console.log("실패!!!!! fail")
+		})
+})
+
 
 
 
