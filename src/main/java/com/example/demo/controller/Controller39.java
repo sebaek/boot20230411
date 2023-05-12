@@ -3,9 +3,13 @@ package com.example.demo.controller;
 import java.time.*;
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.domain.*;
+import com.example.demo.mapper.*;
 
 @Controller
 @RequestMapping("sub39")
@@ -93,6 +97,15 @@ public class Controller39 {
 	@ResponseBody
 	public List<String> method13() {
 		return List.of("강백호", "채치수", "송태섭");
+	}
+	
+	@Autowired
+	private Mapper02 mapper02;
+	
+	@GetMapping("link14")
+	@ResponseBody
+	public List<Dto08> method21(Integer cid) {
+		return mapper02.sql7(cid);
 	}
 }
 

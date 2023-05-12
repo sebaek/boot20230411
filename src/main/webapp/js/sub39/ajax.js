@@ -137,6 +137,16 @@ $("#btn13").click(function() {
 	})
 })
 
+$("#btn14").click(function() {
+	const cid = $("#categoryIdInput").val();
+	
+	$.ajax("/sub39/link14?cid=" + cid, {
+		success: function(data) {
+			console.log(data);
+		}
+	})
+})
+
 
 
 
