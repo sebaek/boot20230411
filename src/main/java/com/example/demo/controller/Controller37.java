@@ -70,6 +70,15 @@ public class Controller37 {
 		
 		return ResponseEntity.ok(date);
 	}
+	
+	@GetMapping("link8")
+	@ResponseBody
+	public String method8() {
+		
+		String dateTime = LocalDateTime.now().toString();
+		
+		return dateTime;
+	}
 }
 
 
