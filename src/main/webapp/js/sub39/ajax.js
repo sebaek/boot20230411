@@ -2,7 +2,7 @@ $("#btn1").click(function() {
 	$.ajax("/sub39/link1", {
 		success: function() {
 			console.log("성공");
-		}, 
+		},
 		error: function() {
 			console.log("실패!")
 		},
@@ -16,7 +16,7 @@ $("#btn2").click(function() {
 	$.ajax("/sub39/link2", {
 		success: function() {
 			console.log("성공");
-		}, 
+		},
 		error: function() {
 			console.log("실패!")
 		},
@@ -45,6 +45,31 @@ $("#btn4").click(function() {
 	})
 })
 
+$("#btn5").click(function() {
+	$.ajax("/sub39/link1")
+		.done(function() {
+			console.log("done 메소드 사용, 성공!!!!!");
+		})
+		.fail(function() {
+			console.log("fail 메소드 사용, 실패!!!!!")
+		})
+		.always(function() {
+			console.log("alwyas 메소드 사용, 성공이든 실패든");
+		});
+})
+
+$("#btn6").click(function() {
+	$.ajax("/sub39/link2")
+		.done(function() {
+			console.log("done 메소드 사용, 성공!!!!!");
+		})
+		.fail(function() {
+			console.log("fail 메소드 사용, 실패!!!!!")
+		})
+		.always(function() {
+			console.log("alwyas 메소드 사용, 성공이든 실패든");
+		});
+})
 
 
 
