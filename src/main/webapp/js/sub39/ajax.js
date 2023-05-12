@@ -142,7 +142,11 @@ $("#btn14").click(function() {
 	
 	$.ajax("/sub39/link14?cid=" + cid, {
 		success: function(data) {
-			console.log(data);
+			// console.log(data);
+			$("#res14").empty();
+			for (let i = 0; i < data.length; i++) {
+				$("#res14").append(data[i].productName + "<br>");
+			}
 		}
 	})
 })
