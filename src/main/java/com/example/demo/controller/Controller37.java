@@ -132,6 +132,22 @@ public class Controller37 {
 		
 		return map;
 	}
+	
+	@GetMapping("link14")
+	@ResponseBody
+	public Map<String, Object> method14() {
+		
+		var data = new HashMap<String, Object>();
+		
+		data.put("name", "차범근");
+		data.put("score", 8.88);
+		data.put("married", true);
+		data.put("position", null);
+		data.put("child", List.of("차두리", "차하나"));
+		data.put("food", Map.of("beverage", "coke", "meal", "chicken"));
+		
+		return data;
+	}
 }
 
 

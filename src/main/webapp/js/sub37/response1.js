@@ -46,6 +46,9 @@ $("#btn12").click(function() {
 $("#btn13").click(function() {
 	$.ajax("/sub37/link13");
 })
+$("#btn14").click(function() {
+	$.ajax("/sub37/link14");
+})
 
 
 
