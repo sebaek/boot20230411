@@ -29,12 +29,20 @@ $("#btn2").click(function() {
 $("#btn3").click(function() {
 	// 성공(200) 응답을 받아서 
 	// 콘솔에 "성공!!!!!!" 출력
-	$.ajax("/sub39/link3")
+	$.ajax("/sub39/link3", {
+		success: function() {
+			console.log("성공!!!!!!");
+		}
+	})
 });
 $("#btn4").click(function() {
 	// 실패(500) 응답을 받아서
 	// 콘솔에 "실패!!!!!!!!" 출력
-	$.ajax("/sub39/link4")
+	$.ajax("/sub39/link4", {
+		error: function() {
+			console.log("실패!!!!!")
+		}
+	})
 })
 
 

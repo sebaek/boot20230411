@@ -24,6 +24,28 @@ public class Controller39 {
 	public ResponseEntity method2() {
 		return ResponseEntity.badRequest().build();
 	}
+	
+	@GetMapping("link3")
+	public ResponseEntity method3() {
+		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping("link4")
+	public ResponseEntity method4() {
+		return ResponseEntity.internalServerError().build();
+	}
+	
+	/*
+	@GetMapping("link5")
+	public ResponseEntity method5() {
+		boolean ok = service.method();
+		if (ok) {
+			return ResponseEntity.ok();
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+	}
+	*/
 }
 
 
