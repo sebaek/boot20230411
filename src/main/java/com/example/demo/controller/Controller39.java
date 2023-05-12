@@ -46,6 +46,12 @@ public class Controller39 {
 		}
 	}
 	*/
+	
+	@GetMapping("link9")
+	@ResponseBody
+	public String method9() {
+		return "hello ajax!@!@!";
+	}
 }
 
 

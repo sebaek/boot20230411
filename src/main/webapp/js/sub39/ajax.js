@@ -84,7 +84,19 @@ $("#btn8").click(function() {
 		})
 })
 
+$("#btn9").click(function() {
+	$.ajax("/sub39/link9", {
+		success: function(data) {
+			console.log("링크9 성공");
+			console.log(data);
+		}
+	})
+})
 
+$("#btn10").click(function() {
+	// 응답본문(현재시간) 이 콘솔에 출력
+	$.ajax("/sub39/link10"); 
+})
 
 
 
