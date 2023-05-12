@@ -38,7 +38,7 @@
 	<br />
 	<input type="text" id="inputScore2" placeholder="점수" />
 	<br />
-	<input type="text" id="inputMarried2" placeholder="결혼여부" />
+	결혼여부<input type="checkbox" id="inputMarried2" />
 	<br />
 	<button id="btn9">전송</button>
 	
