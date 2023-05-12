@@ -122,7 +122,16 @@ public class Controller37 {
 		return map;
 	}
 	
-	
+	@GetMapping("link13")
+	@ResponseBody
+	public Map<String, Object> method13() {
+		var map = new HashMap<String, Object>();
+		
+		map.put("address", "seoul");
+		map.put("price", 3.14);
+		
+		return map;
+	}
 }
 
 
