@@ -127,6 +127,16 @@ $("#btn12").click(function() {
 	})
 })
 
+$("#btn13").click(function() {
+	$.ajax("/sub39/link13", {
+		success: function(data) {
+			for (let i = 0; i < data.length; i++) {
+				console.log(data[i]);
+			}
+		}
+	})
+})
+
 
 
 

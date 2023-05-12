@@ -88,6 +88,12 @@ public class Controller39 {
 		
 		return new Dto1();
 	}
+	
+	@GetMapping("link13")
+	@ResponseBody
+	public List<String> method13() {
+		return List.of("강백호", "채치수", "송태섭");
+	}
 }
 
 
