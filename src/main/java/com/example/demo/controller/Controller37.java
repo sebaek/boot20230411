@@ -193,6 +193,28 @@ public class Controller37 {
 		
 		return new Dto2(); // {"city":"jeju", "score":3.3, "cap":true}
 	}
+	
+	@GetMapping("link17")
+	@ResponseBody
+	public List<String> method17() {
+		
+		return List.of("java", "css", "html");
+	}
+	
+	@GetMapping("link18")
+	@ResponseBody
+	public List<Map<String, Object>> method18() {
+		
+		return List.of(Map.of("name", "강백호"), 
+				Map.of("name", "채치수"),
+				Map.of("name", "정대만"));
+	}
+	
+	@GetMapping("link19")
+	@ResponseBody
+	public List<Dto2> method19() {
+		return List.of(new Dto2(), new Dto2());
+	}
 }
 
 
