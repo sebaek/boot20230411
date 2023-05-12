@@ -74,10 +74,18 @@ $("#btn21").click(function() {
 })
 
 $("#btn22").click(function() {
-	
+
 	const cid = $("#categoryIdInput").val();
-	
-	$.ajax("/sub38/link22?cid=" + cid);
+
+	$.ajax("/sub38/link22?cid=" + cid)
+		.done(function(data) {
+			const list = $("#productList");
+			list.empty();
+			
+			data.forEach(function(product) {
+				list.append(`<li>${product.productName}</li>`);
+			})
+		});
 })
 
 
