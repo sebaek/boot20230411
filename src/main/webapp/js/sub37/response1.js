@@ -69,6 +69,16 @@ $("#btn19").click(function() {
 $("#btn20").click(function() {
 	$.ajax("/sub38/link20");
 })
+$("#btn21").click(function() {
+	$.ajax("/sub38/link21");
+})
+
+$("#btn22").click(function() {
+	
+	const cid = $("#categoryIdInput").val();
+	
+	$.ajax("/sub38/link22?cid=" + cid);
+})
 
 
 
