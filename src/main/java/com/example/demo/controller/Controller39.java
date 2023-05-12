@@ -70,6 +70,24 @@ public class Controller39 {
 	public Map<String, Object> method11() {
 		return Map.of("name", "채소연", "age", 20);
 	}
+	
+	static class Dto1 {
+		public String getCity() {
+			return "seoul";
+		}
+		public String getAddress() {
+			return "jeju";
+		}
+		public String getPhone() {
+			return "apple";
+		}
+	}
+	@GetMapping("link12")
+	@ResponseBody
+	public Dto1 method12() {
+		
+		return new Dto1();
+	}
 }
 
 

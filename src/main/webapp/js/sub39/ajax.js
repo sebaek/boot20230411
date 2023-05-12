@@ -116,6 +116,9 @@ $("#btn11").click(function() {
 
 $("#btn12").click(function() {
 	$.ajax("/sub39/link12", {
+		
+		// content-type : applicaion/json
+		// body : {"address": "seoul", "city":"jeju", "phone":"apple"}
 		success: function(data) {
 			console.log(data.address);
 			console.log(data.city);
