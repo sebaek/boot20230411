@@ -56,6 +56,15 @@ $("#btn15").click(function() {
 $("#btn16").click(function() {
 	$.ajax("/sub37/link16");
 })
+$("#btn17").click(function() {
+	$.ajax("/sub37/link17");
+})
+$("#btn18").click(function() {
+	$.ajax("/sub37/link18");
+})
+$("#btn19").click(function() {
+	$.ajax("/sub37/link19");
+})
 
 
 
