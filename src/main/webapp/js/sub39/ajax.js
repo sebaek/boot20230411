@@ -89,6 +89,7 @@ $("#btn9").click(function() {
 		success: function(data) {
 			console.log("링크9 성공");
 			console.log(data);
+			$("#res9").text(data);
 		}
 	})
 })
@@ -99,6 +100,16 @@ $("#btn10").click(function() {
 		success: function(data) {
 			// console.log(data);
 			$("#res10").text(data);
+		}
+	}); 
+})
+
+$("#btn11").click(function() {
+	// 응답본문(현재시간) 이 콘솔에 출력
+	$.ajax("/sub39/link11", {
+		success: function(data) {
+			// $("#res11").text(data.name);
+			$("#res11").text(data);
 		}
 	}); 
 })
