@@ -148,6 +148,51 @@ public class Controller37 {
 		
 		return data;
 	}
+	
+	static class Dto1 {
+		public String getName() {
+			return "강백호";
+		}
+		public Integer getAge() {
+			return 33;
+		}
+	}
+	
+	@GetMapping("link15")
+	@ResponseBody
+	public Dto1 method15() {
+		Dto1 data = new Dto1();
+		
+		return data;
+	}
+	
+	static class Dto2 {
+		public String getCity() {
+			return "jeju";
+		}
+		public Double getScore() {
+			return 3.3;
+		}
+		public Boolean isCap() {
+			return true;
+		}
+		public List<String> getFood() {
+			return List.of("pizza", "chicken", "burger");
+		}
+		public Dto1 getSub1() {
+			return new Dto1();
+		}
+		public Map<String, Object> getSub2() {
+			return Map.of("model", List.of("abc", "def"), "price", 3.14);
+		}
+	}
+	
+	@GetMapping("link16")
+	@ResponseBody
+	public Dto2 method16() {
+		
+		return new Dto2(); // {"city":"jeju", "score":3.3, "cap":true}
+	}
 }
 
 
