@@ -9,3 +9,15 @@ $("#btn2").click(function() {
 $("#btn3").click(function() {
 	$.ajax("/sub37/link3");
 })
+
+$("#btn4").click(function() {
+	$.ajax("/sub37/link4");
+})
+
+
+
+
+
+
+
+
