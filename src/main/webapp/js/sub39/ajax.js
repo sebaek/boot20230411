@@ -151,6 +151,45 @@ $("#btn14").click(function() {
 	})
 })
 
+$("#btn15").click(function() {
+	const cid = $("#categoryIdInput").val();
+	
+	$.ajax("/sub39/link14?cid=" + cid, {
+		success: function(data) {
+			// console.log(data);
+			$("#res15").empty();
+			$("#res15").append(`
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								상품명
+							</th>
+							<th>
+								가격
+							</th>
+						</tr>
+					</thead>
+				</table>
+			`);
+			$("#res15 > .table").append("<tbody />");
+			for (let i = 0; i < data.length; i++) {
+				$("#res15 tbody")
+					.append(`
+						<tr>
+							<td>
+								${data[i].productName}
+							</td>
+							<td>
+								${data[i].price}
+							</td>
+						</tr>
+					`);
+			}
+		}
+	})
+})
+
 
 
 
