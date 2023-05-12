@@ -114,6 +114,16 @@ $("#btn11").click(function() {
 	}); 
 })
 
+$("#btn12").click(function() {
+	$.ajax("/sub39/link12", {
+		success: function(data) {
+			console.log(data.address);
+			console.log(data.city);
+			console.log(data.phone);	
+		}
+	})
+})
+
 
 
 
