@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.time.*;
+
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
@@ -60,6 +62,13 @@ public class Controller37 {
 	public ResponseEntity<String> method6() {
 		
 		return ResponseEntity.ok("hello response 2222");
+	}
+	
+	@GetMapping("link7")
+	public ResponseEntity<String> method7() {
+		String date = LocalDate.now().toString();
+		
+		return ResponseEntity.ok(date);
 	}
 }
 
