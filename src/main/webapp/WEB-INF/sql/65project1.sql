@@ -11,7 +11,7 @@ CREATE TABLE BoardLike (
     FOREIGN KEY (memberId) REFERENCES Member(id)
 );
 
-
+SELECT * FROM BoardLike;
 
 
 SELECT * FROM Member;
