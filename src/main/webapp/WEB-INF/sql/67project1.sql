@@ -21,7 +21,7 @@ VALUES (4146, '댓글 둘', 'user9');
 INSERT INTO Comment (boardId, content, memberId)
 VALUES (4146, '댓글 셋', 'user9');
 
-
+SELECT * FROM Comment;
 
 
 
